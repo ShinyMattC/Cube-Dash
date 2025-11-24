@@ -115,8 +115,6 @@ MonoBehaviour:
     m_Bits: 256
   groundCheckRadius: 7
   groundCheck: {fileID: 6371904883701897423}
-  blockCheck: {fileID: 8349834740595113929}
-  blockCheckRadius: 2
   height: 1
   playerObject: {fileID: 6371904883281112829}
   obstacleLayer:
@@ -125,13 +123,14 @@ MonoBehaviour:
   obstacleCollisionCheck: {fileID: 6371904882751867230}
   fallMultiplier: 3
   lowJumpMultiplier: 3
-  shipYVelocity: 0.4
+  shipYVelocity: 0.168
   isUpsideDown: 0
   sprite: {fileID: 0}
   moveDirection: 5
   rotateDirection: 5
   moveDir: {x: 0, y: 0, z: 0}
   gameMode: 0
+  aus: {fileID: 0}
   editor: {fileID: 0}
 --- !u!1 &6371904883281112829
 GameObject:
