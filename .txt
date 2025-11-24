@@ -1,0 +1,6 @@
+name: §
+author: §
+songName: §
+songAuthor: §
+levelData: {
+}
