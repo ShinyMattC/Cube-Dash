@@ -37,8 +37,8 @@ public class MovePlayer : MonoBehaviour
     public float fallMultiplier;
     public float lowJumpMultiplier;
 
-    [Range(0, 1)]
-    public float shipYVelocity = 0.4f;
+    [Range(1, 5)]
+    public float shipYVelocity = 2.5f;
 
     public bool isUpsideDown;
 
@@ -126,7 +126,7 @@ public class MovePlayer : MonoBehaviour
                 break;
 
         }
-        Invoke(gameMode.ToString(), 0);
+        Invoke(gameMode.ToString(), Time.deltaTime);
 
         if(Input.GetKeyDown(KeyCode.Escape))
         {
@@ -195,19 +195,21 @@ public class MovePlayer : MonoBehaviour
 
     public void Ship()
     {
+        // gravity changing values (-1,5 * gravity) are subject to change
         transform.rotation = Quaternion.Euler(rb.velocity.y * -2, 0, 0);
         if(!isUpsideDown)
         {
             Physics.gravity = new Vector3(0, -9.81f, 0);
             if (Input.GetMouseButton(0))
             {
-                rb.velocity += new Vector3(0, shipYVelocity, 0);
-                Mathf.Clamp(rb.velocity.y, 0, 10);
-
+                //rb.velocity += new Vector3(0, shipYVelocity, 0);
+                //Mathf.Clamp(rb.velocity.y, 0, 10);
+                Physics.gravity = new Vector3(0, -shipYVelocity * -9.81f, 0);
             }
             else
             {
-                rb.velocity += new Vector3(0, -shipYVelocity, 0);
+                //rb.velocity += new Vector3(0, -shipYVelocity &, 0);
+                Physics.gravity = new Vector3(0, shipYVelocity* -9.81f, 0);
             }
         }
         else if (isUpsideDown)
@@ -215,13 +217,14 @@ public class MovePlayer : MonoBehaviour
             Physics.gravity = new Vector3(0, 9.81f, 0);
             if (Input.GetMouseButton(0))
             {
-                rb.velocity += new Vector3(0, -shipYVelocity, 0);
-                Mathf.Clamp(rb.velocity.y, 0, -10);
-
+                //rb.velocity += new Vector3(0, -shipYVelocity, 0);
+                //Mathf.Clamp(rb.velocity.y, 0, -10);
+                Physics.gravity = new Vector3(0, -shipYVelocity * 9.81f, 0);
             }
             else
             {
-                rb.velocity += new Vector3(0, shipYVelocity, 0);
+                //rb.velocity += new Vector3(0, shipYVelocity, 0);
+                Physics.gravity = new Vector3(0, shipYVelocity * 9.81f, 0);
             }
         }
         
@@ -259,7 +262,12 @@ public class MovePlayer : MonoBehaviour
                 other.gameObject.GetComponent<Spike>().Die();
                 break;
             case "Yellow Jump Orb":
-                    other.gameObject.GetComponent<JumpOrb>().JumpOrbFunction(8);
+            
+                    //other.gameObject.GetComponent<JumpOrb>().JumpOrbFunction(8);
+                if (Input.GetMouseButton(0))
+                {
+                    JumpOrbFunction(8);
+                }
                 break;
             case "Level End":
                 SceneManager.LoadScene(2);
@@ -283,5 +291,20 @@ public class MovePlayer : MonoBehaviour
                 break;
         }
     }
-
+    public void JumpOrbFunction(float jumpForce)
+    {
+        /*if(playerMove.isUpsideDown == false)
+        {
+            playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
+        else
+        {
+            playerRb.AddForce(Vector3.down * jumpForce, ForceMode.Impulse);
+        }*/
+        if(Input.GetMouseButton(0))
+        {
+            rb.AddForce(((isUpsideDown) ? Vector3.down : Vector3.up) * jumpForce, ForceMode.Impulse);
+        }
+        
+    }
 }

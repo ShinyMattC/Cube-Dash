@@ -9,7 +9,7 @@ public class LoadLevel : MonoBehaviour
         if(LoadLevelManager.Instance != null)
         {
             GetLevelDetails gld = LoadLevelManager.Instance.levelLoader;
-
+// test
             gld.GetLevelBlockDetails(Application.persistentDataPath + "/custom-levels/", $"{LoadLevelManager.Instance.levelName}.txt");
             gld.PlaceBlocks(gld.parsedDetails);
             Destroy(GameObject.Find("Canvas"));

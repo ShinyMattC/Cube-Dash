@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3825738955047186061}
   - component: {fileID: 3825738955047186058}
   - component: {fileID: 3825738955047186059}
-  - component: {fileID: 3825738955047186056}
   - component: {fileID: 3825738955047186057}
   - component: {fileID: 4272569733230682789}
+  - component: {fileID: 7427661437686648893}
   m_Layer: 0
   m_Name: JumpOrb
   m_TagString: Yellow Jump Orb
@@ -82,19 +82,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &3825738955047186056
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3825738955047186070}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3825738955047186057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,3 +111,16 @@ MonoBehaviour:
   curRotation: {x: 0, y: 0, z: 0, w: 0}
   editor: {fileID: 0}
   _name: JOrb
+--- !u!65 &7427661437686648893
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3825738955047186070}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
