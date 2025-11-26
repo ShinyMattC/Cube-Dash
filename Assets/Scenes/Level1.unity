@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.49825907, g: 0.5510743, b: 0.6200284, a: 1}
+  m_IndirectSpecularColor: {r: 0.49825913, g: 0.5510744, b: 0.6200287, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1794,6 +1794,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5321405342968249379, guid: d22a450b53e8c644a82cf425f4b713b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8038229062607289978, guid: d22a450b53e8c644a82cf425f4b713b7,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3092,6 +3097,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7255741016939645572, guid: 770585323d0104d4bb679e0eb83b7e44,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 770585323d0104d4bb679e0eb83b7e44, type: 3}

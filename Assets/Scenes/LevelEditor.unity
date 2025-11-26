@@ -524,7 +524,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 263323605}
   m_Direction: 0
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -11513,7 +11513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 15
-  quantity: 999999999
+  quantity: 1
   quantityText: {fileID: 1580161969}
   clicked: 0
 --- !u!114 &1631889156

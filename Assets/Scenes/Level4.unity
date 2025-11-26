@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641222, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1245,6 +1245,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5321405342968249379, guid: d22a450b53e8c644a82cf425f4b713b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8038229062607289978, guid: d22a450b53e8c644a82cf425f4b713b7,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1681,6 +1686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 6371904882524120889}
   offset: {x: 15, y: 3, z: -3}
+  speed: 0
 --- !u!1001 &1911186331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1899,6 +1905,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpHeight: 12
+  rotationSpeed: 1.9
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -1912,11 +1919,15 @@ MonoBehaviour:
   obstacleCollisionCheck: {fileID: 6371904882524120893}
   fallMultiplier: 3
   lowJumpMultiplier: 3
+  shipYVelocity: 2.5
   isUpsideDown: 0
   sprite: {fileID: 0}
   moveDirection: 3
   rotateDirection: 3
+  moveDir: {x: 0, y: 0, z: 0}
   gameMode: 0
+  aus: {fileID: 0}
+  editor: {fileID: 0}
 --- !u!54 &6371904882524120895
 Rigidbody:
   m_ObjectHideFlags: 0
