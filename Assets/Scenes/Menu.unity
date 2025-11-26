@@ -5093,7 +5093,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &857452536
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5164,7 +5164,7 @@ GameObject:
   - component: {fileID: 860574757}
   - component: {fileID: 860574756}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: LoadLevelManager_CustomLevels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9550,6 +9550,7 @@ GameObject:
   - component: {fileID: 1608071362}
   - component: {fileID: 1608071361}
   - component: {fileID: 1608071360}
+  - component: {fileID: 1608071364}
   m_Layer: 5
   m_Name: Button (6)
   m_TagString: Untagged
@@ -9589,7 +9590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c97b4f7fca718214a8f66f7a8c4843ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelSave: {fileID: 0}
+  levelSave: {fileID: 1608071364}
   parsedDetails: []
   defaultBlockNames:
   - Block
@@ -9600,6 +9601,14 @@ MonoBehaviour:
   - SGPortal
   - CGPortal
   - SpawnPoint
+  - SpeedNormal
+  - SpeedFast
+  - SpeedVFast
+  - SpeedSlow
+  - SpeedVSlow
+  - LevelEnd
+  - Slope30
+  - Slope45
   prefabs:
   - {fileID: 4137405628080002798, guid: 504e8608e303c784b992ef108bd95109, type: 3}
   - {fileID: 8813685526598557041, guid: 04cfb2ad420b0dc4ca974976a19d6a91, type: 3}
@@ -9609,7 +9618,15 @@ MonoBehaviour:
   - {fileID: 5169547066879019660, guid: ef6474fd35b20da4fbb5f3ddc26a22ca, type: 3}
   - {fileID: 5169547066879019660, guid: a843ab150bb5a314b95f89a4d07af167, type: 3}
   - {fileID: 900081514062080910, guid: f7e8d8c619b52f44d879fe7d84c3269e, type: 3}
-  player: {fileID: 0}
+  - {fileID: 2992126458239660262, guid: a4afe8008a1600b48ad27d829c3da98e, type: 3}
+  - {fileID: 3599706086491438160, guid: 9e0d87c2e249a494b84269814a20f40e, type: 3}
+  - {fileID: 657153990091438605, guid: abfc3abbeb929b54bae0d862a85f32d1, type: 3}
+  - {fileID: 3221657898057729398, guid: af218155aa82fe14981d2a4357d17533, type: 3}
+  - {fileID: 6980021169936284785, guid: 810dc488800192d4c883d49cc20021f1, type: 3}
+  - {fileID: 377778788475027584, guid: 9d9b86f46705d9a48b6982544012a755, type: 3}
+  - {fileID: 5476129647615037337, guid: e47b7b82b0314c641aa40631e69b574e, type: 3}
+  - {fileID: 1765568807518509010, guid: 8f760f0e8d6286d40be56986567a0490, type: 3}
+  player: {fileID: 6371904882751867230, guid: 770585323d0104d4bb679e0eb83b7e44, type: 3}
   inp_levelName: {fileID: 1218347551}
   levelName: 
 --- !u!114 &1608071361
@@ -9663,7 +9680,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: first level cop cop
           m_BoolArgument: 0
         m_CallState: 1
 --- !u!114 &1608071362
@@ -9703,6 +9720,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1608071358}
   m_CullTransparentMesh: 0
+--- !u!114 &1608071364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608071358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0836c3168f1a6ed48b536b1adf01bedc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelName: first level cop cop
+  levelAuthor: 
+  songName: 
+  songAuthor: 
+  blockItems: []
+  inp_levelName: {fileID: 0}
+  inp_levelAuthor: {fileID: 0}
+  inp_songName: {fileID: 0}
+  inp_songAuthor: {fileID: 0}
+  blockIDs: 
+  blockPositions: []
+  blockRotations: []
+  blockNames: []
 --- !u!1 &1652857514
 GameObject:
   m_ObjectHideFlags: 0
@@ -11291,7 +11333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1927284172
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12263,7 +12305,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2048030871
 RectTransform:
   m_ObjectHideFlags: 0
