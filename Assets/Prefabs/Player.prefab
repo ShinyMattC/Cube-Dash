@@ -159,7 +159,7 @@ MonoBehaviour:
   isUpsideDown: 0
   sprite: {fileID: 0}
   moveDirection: 5
-  rotateDirection: 4
+  rotateDirection: 5
   moveDir: {x: 0, y: 0, z: 0}
   gameMode: 0
   aus: {fileID: 0}
@@ -298,6 +298,18 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675746476378811344, guid: 0b0bff336b21ba94abeb6617f9228dc3,
+        type: 3}
+      propertyPath: m_text
+      value: 'v1.4 beta2
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675746476378811344, guid: 0b0bff336b21ba94abeb6617f9228dc3,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 17.6
       objectReference: {fileID: 0}
     - target: {fileID: 5679730546879828290, guid: 0b0bff336b21ba94abeb6617f9228dc3,
         type: 3}
