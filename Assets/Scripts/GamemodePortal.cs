@@ -18,7 +18,9 @@ public class GamemodePortal : MonoBehaviour
         if(other.tag == "Player")
         {
             playerToModify = other.gameObject.GetComponent<MovePlayer>();
+            
             ChangeGamemode(gameModeToChangeTo);
+            
         }
     }
     public void ChangeGamemode(gamemode g)

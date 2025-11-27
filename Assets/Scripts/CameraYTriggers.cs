@@ -6,6 +6,8 @@ public enum Triggerrole {Top, Bottom}
 public class CameraYTriggers : MonoBehaviour
 {
     public Triggerrole triggerRole;
+    public CamFollow camFollow;
+    public GameObject player; 
     // Start is called before the first frame update
     void Start()
     {
@@ -15,17 +17,13 @@ public class CameraYTriggers : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
     public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player") {
-            CamFollow camFollow = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CamFollow>();
-            if (camFollow = null)
-            {
-                Debug.LogWarning("No CamFollow script found. Are there cameras in this scene?");
-            }
-            GameObject player = GameObject.Find("Player");
+
+            
             camFollow.offset.y = player.transform.position.y;
         }
     }
