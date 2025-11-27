@@ -22,7 +22,7 @@ public class LevelSave : MonoBehaviour
 
     public List<int> blockIDs;
     public List<Vector3> blockPositions;
-    public List<Quaternion> blockRotations;
+    public List<Vector3> blockRotations;
     public List<string> blockNames;
 
     private LevelEditorManager lm;
@@ -71,7 +71,7 @@ public class LevelSave : MonoBehaviour
             WriteToTxt("levelData: {");
             foreach (BlockItem b in blockArray)
             {
-                WriteToTxt($"{b._name}({(int)b.curPosition.x},{(int)b.curPosition.y},{(int)b.curPosition.z};{(int)b.curRotation.x},{(int)b.curRotation.y},{(int)b.curRotation.z},{(int)b.curRotation.w})");
+                WriteToTxt($"{b._name}({(int)b.curPosition.x},{(int)b.curPosition.y},{(int)b.curPosition.z};{(int)b.curRotation.x},{(int)b.curRotation.y},{(int)b.curRotation.z})");
                 blockIDs.Add(b.id);
                 blockPositions.Add(b.curPosition);
                 blockRotations.Add(b.curRotation);
@@ -97,7 +97,7 @@ public class LevelSave : MonoBehaviour
             WriteToTxt("levelData: {");
             foreach (BlockItem b in blockArray)
             {
-                WriteToTxt($"{b._name}({(int)b.curPosition.x},{(int)b.curPosition.y},{(int)b.curPosition.z};{(int)b.curRotation.x},{(int)b.curRotation.y},{(int)b.curRotation.z},{(int)b.curRotation.w})");
+                WriteToTxt($"{b._name}({(int)b.curPosition.x},{(int)b.curPosition.y},{(int)b.curPosition.z};{(int)b.curRotation.x},{(int)b.curRotation.y},{(int)b.curRotation.z})");
                 blockIDs.Add(b.id);
                 blockPositions.Add(b.curPosition);
                 blockRotations.Add(b.curRotation);

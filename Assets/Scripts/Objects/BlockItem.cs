@@ -8,7 +8,7 @@ public class BlockItem : MonoBehaviour
 {
     public int id;
     public Vector3 curPosition;
-    public Quaternion curRotation;
+    public Vector3 curRotation;
     public LevelEditorManager editor;
     public string _name;
 
@@ -20,7 +20,7 @@ public class BlockItem : MonoBehaviour
     private void Update()
     {
         curPosition = this.gameObject.transform.position;
-        curRotation = this.gameObject.transform.rotation;
+        curRotation = this.gameObject.transform.rotation.eulerAngles;
     }
     void OnMouseOver() {
         editor = GameObject.FindGameObjectWithTag("Level Editor Manager").GetComponent<LevelEditorManager>();

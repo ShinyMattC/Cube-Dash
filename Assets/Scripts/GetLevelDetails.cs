@@ -12,7 +12,7 @@ public class Block
 {
     public string blockName;
     public int[] position = new int[3];
-    public int[] rotation = new int[4];
+    public int[] rotation = new int[3];
     public void DisplayBlockDetails(Block b)
     {
         Debug.Log("name: " + b.blockName + " pos: ");
@@ -98,6 +98,7 @@ public class GetLevelDetails : MonoBehaviour
             
         }
         parsedDetails = blockMetadata;
+        
     }
     public void PlaceBlocks(List<string> blockDetails)
     {
@@ -120,7 +121,7 @@ public class GetLevelDetails : MonoBehaviour
                 int.TryParse(str[4], out b.rotation[0]);
                 int.TryParse(str[5], out b.rotation[1]);
                 int.TryParse(str[6], out b.rotation[2]);
-                int.TryParse(str[7], out b.rotation[3]);
+                //int.TryParse(str[7], out b.rotation[3]);
                 // b.DisplayBlockDetails(b);
                 GameObject blockGO;
 
@@ -231,10 +232,10 @@ public class GetLevelDetails : MonoBehaviour
 
                 }*/
                 //Instantiate(prefabs[Array.IndexOf(prefabs, b.blockName)], new Vector3(b.position[0], b.position[1], b.position[2]), new Quaternion(b.rotation[0], b.rotation[1], b.rotation[2], b.rotation[3]));
-                blockGO = Instantiate(prefabs[Array.IndexOf(defaultBlockNames, b.blockName)], new Vector3(b.position[0], b.position[1], b.position[2]), new Quaternion(b.rotation[0], b.rotation[1], b.rotation[2], b.rotation[3]));
+                blockGO = Instantiate(prefabs[Array.IndexOf(defaultBlockNames, b.blockName)], new Vector3(b.position[0], b.position[1], b.position[2]), Quaternion.Euler(b.rotation[0], b.rotation[1], b.rotation[2]));
                 blockGO.AddComponent<BlockItem>();
                 blockGO.GetComponent<BlockItem>().curPosition = new Vector3(b.position[0], b.position[1], b.position[2]);
-                blockGO.GetComponent<BlockItem>().curRotation = new Quaternion(b.rotation[0], b.rotation[1], b.rotation[2], b.rotation[3]);
+                blockGO.GetComponent<BlockItem>().curRotation = new Vector3(b.rotation[0], b.rotation[1], b.rotation[2]);
                 levelSave.OnBlockPlaced(blockGO.GetComponent<BlockItem>());
         }
         

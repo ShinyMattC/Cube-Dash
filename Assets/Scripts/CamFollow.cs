@@ -11,13 +11,15 @@ public class CamFollow : MonoBehaviour
 
     public float speed;
 
-    
+    public GameObject yAxisTriggerTop, yAxisTriggerBottom;
+
+    public GameObject follower;
 
     // Update is called once per frame
     void Update()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        transform.position = new Vector3(player.transform.position.x + offset.x, player.transform.position.y + offset.y, player.transform.position.z - offset.z);
-
+        //.position = new Vector3(player.transform.position.x + offset.x, player.transform.position.y + offset.y, player.transform.position.z - offset.z);
+        transform.position = new Vector3(player.transform.position.x + offset.x, offset.y, player.transform.position.z + offset.z);
     }
 }

@@ -139,7 +139,7 @@ public class MovePlayer : MonoBehaviour
     public void Cube()
     {
         
-
+            
         if (Input.GetMouseButton(0) && isGrounded && !isUpsideDown)
         {
             rb.velocity = Vector3.up * jumpHeight;
