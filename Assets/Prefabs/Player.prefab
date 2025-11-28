@@ -297,7 +297,7 @@ PrefabInstance:
     - target: {fileID: 681270375408173403, guid: 0b0bff336b21ba94abeb6617f9228dc3,
         type: 3}
       propertyPath: m_text
-      value: build 20251127_14_b2
+      value: build 20251128_14_b3
       objectReference: {fileID: 0}
     - target: {fileID: 2926555240057991013, guid: 0b0bff336b21ba94abeb6617f9228dc3,
         type: 3}
@@ -307,7 +307,7 @@ PrefabInstance:
     - target: {fileID: 5675746476378811344, guid: 0b0bff336b21ba94abeb6617f9228dc3,
         type: 3}
       propertyPath: m_text
-      value: 'v1.4 beta2
+      value: 'v1.4 beta3
 
 '
       objectReference: {fileID: 0}
