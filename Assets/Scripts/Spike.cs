@@ -7,6 +7,8 @@ public class Spike : MonoBehaviour
     public GameObject player;
 
     public GameObject spawnPoint;
+
+    public CamFollow camFollow;
     private void Awake() {
     }
     private void Update()
@@ -17,6 +19,7 @@ public class Spike : MonoBehaviour
     private void Start()
     {
         spawnPoint = GameObject.FindGameObjectWithTag("Spawn Point");
+        camFollow = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CamFollow>();
     }
     public void SetPlayer(GameObject _player)
     {
@@ -29,8 +32,8 @@ public class Spike : MonoBehaviour
         player.GetComponent<MovePlayer>().isUpsideDown = false;
         player.GetComponent<MovePlayer>().speed = 5f;
         player.GetComponent<MovePlayer>().gameMode = gamemode.Cube;
-        CamFollow camFollow = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CamFollow>();
         camFollow.transform.position = camFollow.followerOriginalPosition;
+        camFollow.offset = camFollow.offsetOriginal;
         //player.GetComponent<AudioSource>().Stop();
         //player.GetComponent<AudioSource>().Play();
     } 

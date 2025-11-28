@@ -13,7 +13,7 @@ public class EditorCamMove : MonoBehaviour
         Vector3 dir = input.normalized;
 
         Vector3 velocity = dir * speed;
-        Vector3 moveAmount = velocity * Time.deltaTime;
+        Vector3 moveAmount = velocity * Time.unscaledDeltaTime;
 
         transform.position += moveAmount;
 

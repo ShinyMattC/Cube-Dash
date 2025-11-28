@@ -63,7 +63,7 @@ public class MovePlayer : MonoBehaviour
     public AudioSource aus;
 
     
-
+    public GameObject cubeModel;
 
     public LevelEditorManager editor;
     float velocity;
@@ -158,29 +158,29 @@ public class MovePlayer : MonoBehaviour
             switch (rotateDirection)
             {
                 case direction.up:
-                    transform.Rotate(0,rotationSpeed, 0);
+                    cubeModel.transform.Rotate(0,rotationSpeed, 0);
                     break;
                 case direction.down:
-                    transform.Rotate(0, rotationSpeed, 0);
+                    cubeModel.transform.Rotate(0, rotationSpeed, 0);
                     break;
                 case direction.back:
-                    transform.Rotate(rotationSpeed, 0, 0);
+                    cubeModel.transform.Rotate(rotationSpeed, 0, 0);
                     break;
                 case direction.forward:
-                    transform.Rotate(rotationSpeed, 0, 0);
+                    cubeModel.transform.Rotate(rotationSpeed, 0, 0);
                     break;
                 case direction.left:
-                    transform.Rotate(0, 0,rotationSpeed);
+                    cubeModel.transform.Rotate(0, 0,rotationSpeed);
                     break;
                 case direction.right:
-                    transform.Rotate(0, 0, -rotationSpeed);
+                    cubeModel.transform.Rotate(0, 0, -rotationSpeed);
                     break;
 
             }
         }
         else
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            cubeModel.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
         if (rb.velocity.y < 0)
@@ -196,7 +196,7 @@ public class MovePlayer : MonoBehaviour
     public void Ship()
     {
         // gravity changing values (-1,5 * gravity) are subject to change
-        transform.rotation = Quaternion.Euler(rb.velocity.y * -2, 0, 0);
+        cubeModel.transform.rotation = Quaternion.Euler(rb.velocity.y * -2, 0, 0);
         if(!isUpsideDown)
         {
             Physics.gravity = new Vector3(0, -9.81f, 0);

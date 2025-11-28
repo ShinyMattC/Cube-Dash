@@ -17,6 +17,7 @@ TagManager:
   - Ship Portal
   - Cube Portal
   - Ball Portal
+  - Block
   layers:
   - Default
   - TransparentFX

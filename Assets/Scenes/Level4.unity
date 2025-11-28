@@ -1687,6 +1687,11 @@ MonoBehaviour:
   player: {fileID: 6371904882524120889}
   offset: {x: 15, y: 3, z: -3}
   speed: 0
+  yAxisTriggerTop: {fileID: 0}
+  yAxisTriggerBottom: {fileID: 0}
+  follower: {fileID: 0}
+  followerOriginalPosition: {x: 0, y: 0, z: 0}
+  offsetOriginal: {x: 0, y: 0, z: 0}
 --- !u!1001 &1911186331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1927,6 +1932,7 @@ MonoBehaviour:
   moveDir: {x: 0, y: 0, z: 0}
   gameMode: 0
   aus: {fileID: 0}
+  cubeModel: {fileID: 6371904884125581470}
   editor: {fileID: 0}
 --- !u!54 &6371904882524120895
 Rigidbody:
