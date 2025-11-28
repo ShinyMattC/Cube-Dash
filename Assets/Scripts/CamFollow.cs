@@ -15,6 +15,12 @@ public class CamFollow : MonoBehaviour
 
     public GameObject follower;
 
+    public Vector3 followerOriginalPosition;
+
+    private void Start()
+    {
+        followerOriginalPosition = follower.transform.position;
+    }
     // Update is called once per frame
     void Update()
     {

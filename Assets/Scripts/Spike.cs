@@ -29,6 +29,8 @@ public class Spike : MonoBehaviour
         player.GetComponent<MovePlayer>().isUpsideDown = false;
         player.GetComponent<MovePlayer>().speed = 5f;
         player.GetComponent<MovePlayer>().gameMode = gamemode.Cube;
+        CamFollow camFollow = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CamFollow>();
+        camFollow.transform.position = camFollow.followerOriginalPosition;
         //player.GetComponent<AudioSource>().Stop();
         //player.GetComponent<AudioSource>().Play();
     } 

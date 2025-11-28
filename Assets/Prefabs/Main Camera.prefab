@@ -209,6 +209,7 @@ MonoBehaviour:
   triggerRole: 0
   camFollow: {fileID: 2535229111594848716}
   player: {fileID: 0}
+  cameraYChangeAmount: 5
 --- !u!1 &2535229112006366893
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,6 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bfe0e5f4fed9ea7d88991ad5994a21a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerRole: 0
+  triggerRole: 1
   camFollow: {fileID: 2535229111594848716}
   player: {fileID: 0}
+  cameraYChangeAmount: 5

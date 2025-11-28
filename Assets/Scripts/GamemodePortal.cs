@@ -27,5 +27,6 @@ public class GamemodePortal : MonoBehaviour
     {
         playerToModify.gameMode = g;
         Debug.Log($"Changed the player's gamemode to {playerToModify.gameMode}.");
+        
     }
 }

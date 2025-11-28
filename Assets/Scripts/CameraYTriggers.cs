@@ -8,6 +8,7 @@ public class CameraYTriggers : MonoBehaviour
     public Triggerrole triggerRole;
     public CamFollow camFollow;
     public GameObject player; 
+    public int cameraYChangeAmount;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,16 @@ public class CameraYTriggers : MonoBehaviour
         if (other.tag == "Player") {
 
             
-            camFollow.offset.y = player.transform.position.y;
+            //camFollow.offset.y = player.transform.position.y;\
+            switch(triggerRole)
+            {
+                case Triggerrole.Top:
+                    camFollow.offset.y += cameraYChangeAmount;
+                    break;
+                case Triggerrole.Bottom:
+                    camFollow.offset.y += -cameraYChangeAmount;
+                    break;
+            }
         }
     }
 }
