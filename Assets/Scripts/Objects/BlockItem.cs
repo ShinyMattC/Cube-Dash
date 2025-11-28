@@ -69,19 +69,19 @@ public class BlockItem : MonoBehaviour
                 }
                 if (Input.GetKeyDown(KeyCode.J))
                 {
-                    this.GetComponent<Transform>().Translate(-1, 0, 0, Space.World);
+                    this.GetComponent<Transform>().Translate(-0.5f, 0, 0, Space.World);
                 }
                 if (Input.GetKeyDown(KeyCode.L))
                 {
-                    this.GetComponent<Transform>().Translate(1, 0, 0, Space.World);
+                    this.GetComponent<Transform>().Translate(0.5f, 0, 0, Space.World);
                 }
                 if (Input.GetKeyDown(KeyCode.I))
                 {
-                    this.GetComponent<Transform>().Translate(0, 1, 0, Space.World);
+                    this.GetComponent<Transform>().Translate(0, 0.5f, 0, Space.World);
                 }
                 if (Input.GetKeyDown(KeyCode.K))
                 {
-                    this.GetComponent<Transform>().Translate(0, -1, 0, Space.World);
+                    this.GetComponent<Transform>().Translate(0, -0.5f, 0, Space.World);
                 }
             }
             
