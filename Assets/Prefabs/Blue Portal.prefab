@@ -153,9 +153,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 5
   curPosition: {x: 0, y: 0, z: 0}
-  curRotation: {x: 0, y: 0, z: 0, w: 0}
+  curRotation: {x: 0, y: 0, z: 0}
   editor: {fileID: 0}
   _name: BPortal
+  objectOriginalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &7969354407780430849
 GameObject:
   m_ObjectHideFlags: 0

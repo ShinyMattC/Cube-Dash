@@ -51,7 +51,6 @@ public class LevelSave : MonoBehaviour
         levelAuthor = inp_levelAuthor.text;
         songName = inp_songName.text;
         songAuthor = inp_songAuthor.text;
-        
     }
     private void Awake()
     {
@@ -81,6 +80,8 @@ public class LevelSave : MonoBehaviour
                 Debug.Log($"{blockPositions.Count}");
             }
             WriteToTxt("}");
+            TextMeshProUGUI errText = GameObject.Find("Error text").GetComponent<TextMeshProUGUI>();
+            errText.text = $"Saved Level {levelName}";
         }
         else
         {
@@ -108,6 +109,12 @@ public class LevelSave : MonoBehaviour
                 Debug.Log($"{blockNames.Count}");
             }
             WriteToTxt("}");
+            TextMeshProUGUI errText = GameObject.Find("Error text").GetComponent<TextMeshProUGUI>();
+            errText.text = $"Saved Level {levelName}";
+            #if UNITY_EDITOR
+        AssetDatabase.Refresh();
+            #endif
+            errText.text = $"";
         }
         
         
@@ -117,9 +124,7 @@ public class LevelSave : MonoBehaviour
         StreamWriter author = new StreamWriter(levelPth + levelName + ".txt", true);
         author.WriteLine(stuffToWrite);
         author.Close();
-    #if UNITY_EDITOR
-        AssetDatabase.Refresh();
-    #endif
+    
     }
     public void ClearContentsOfSaveFile(string path)
     {
@@ -152,4 +157,5 @@ public class LevelSave : MonoBehaviour
     {
         ConvertToArray(b);
     }
+    
 }
