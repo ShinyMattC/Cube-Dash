@@ -15,11 +15,12 @@ public class CamFollow : MonoBehaviour
 
     public GameObject follower;
 
-    public Vector3 followerOriginalPosition;
+    public Vector3 followerOriginalPosition, offsetOriginal;
 
     private void Start()
     {
         followerOriginalPosition = follower.transform.position;
+        offsetOriginal = offset;
     }
     // Update is called once per frame
     void Update()
