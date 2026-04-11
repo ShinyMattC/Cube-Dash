@@ -5,13 +5,18 @@ using UnityEngine;
 public class BluePortal : MonoBehaviour
 {
 
-    public void RevertGravity()
+    public void RevertGravity(Component sender, params object[] data)
     {
-        Physics.gravity = new Vector3(0, -9.81f, 0);
+        if((string)data[3] == this.tag)
+        {
+            sender.GetComponent<MovePlayer>().isUpsideDown = false;
+            Physics.gravity = new Vector3(0, -9.81f, 0);
+        }
+        
 
     }
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         RevertGravity();
-    }
+    }*/
 }

@@ -67,6 +67,8 @@ public class MovePlayer : MonoBehaviour
 
     public LevelEditorManager editor;
     float velocity;
+
+    public EventSO onTriggerEnter;
     // Start is called before the first frame update
     void Start()
     {
@@ -83,7 +85,7 @@ public class MovePlayer : MonoBehaviour
     {
         
     }
-    public void OnEnable()
+    /*public void OnEnable()
     {
         GameObject[] spikes = GameObject.FindGameObjectsWithTag("Obstacle");
         foreach (GameObject s in spikes)
@@ -92,10 +94,11 @@ public class MovePlayer : MonoBehaviour
             _S.SetPlayer(this.gameObject);
         }
         //AudioSource.PlayClipAtPoint(aus.clip, transform.position);
-    }
+    }*/
     // Update is called once per frame
     void Update()
     {
+        rb.velocity = Vector3.ClampMagnitude(rb.velocity, 15);
         Vector3 pos = transform.position;
 
         switch (moveDirection)
@@ -231,16 +234,19 @@ public class MovePlayer : MonoBehaviour
     }
     public void Ball()
     {
-        transform.Rotate(0, 0, -2f);
-        if (Input.GetMouseButton(0) && !isUpsideDown)
+        cubeModel.transform.Rotate(0, 0, -2f);
+        if (Input.GetMouseButton(0) && !isUpsideDown && isGrounded)
         {
             isUpsideDown = true;
             Physics.gravity = new Vector3(0, 9.81f, 0);
+            transform.rotation = Quaternion.Euler(0, 0, 180);
+
         }
-        else if (Input.GetMouseButton(0) && isUpsideDown) 
+        else if (Input.GetMouseButton(0) && isUpsideDown && isGrounded) 
         {
             isUpsideDown = false;
             Physics.gravity = new Vector3(0, -9.81f, 0);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
     private void OnCollisionEnter(Collision collision)
@@ -252,7 +258,7 @@ public class MovePlayer : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        switch(other.tag)
+        /*switch(other.tag)
         {
             case "Yellow Jump Pad":
                 other.gameObject.GetComponent<JumpPad>().JumpPadFunction(5.6f);
@@ -260,6 +266,8 @@ public class MovePlayer : MonoBehaviour
             case "Obstacle":
                 other.gameObject.GetComponent<Spike>().SetPlayer(this.gameObject);
                 other.gameObject.GetComponent<Spike>().Die();
+                isJumping = false;
+                transform.rotation = Quaternion.Euler(0, 0, 0);
                 break;
             case "Yellow Jump Orb":
             
@@ -289,9 +297,11 @@ public class MovePlayer : MonoBehaviour
             case "Ball Portal":
                 other.gameObject.GetComponent<GamemodePortal>().ChangeGamemode(gamemode.Ball);
                 break;
-        }
+        }*/
+        onTriggerEnter.raise(this, GetComponent<MovePlayer>(), isUpsideDown, 6, other.tag);
+    
     }
-    public void JumpOrbFunction(float jumpForce)
+    /*public void JumpOrbFunction(float jumpForce)
     {
         /*if(playerMove.isUpsideDown == false)
         {
@@ -300,11 +310,11 @@ public class MovePlayer : MonoBehaviour
         else
         {
             playerRb.AddForce(Vector3.down * jumpForce, ForceMode.Impulse);
-        }*/
+        }
         if(Input.GetMouseButton(0))
         {
             rb.AddForce(((isUpsideDown) ? Vector3.down : Vector3.up) * jumpForce, ForceMode.Impulse);
         }
         
-    }
+    }*/
 }

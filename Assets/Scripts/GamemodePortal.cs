@@ -13,15 +13,16 @@ public class GamemodePortal : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void OnTriggerEnter(Collider other)
+    public void Switch(Component sender, params object[] data)
     {
-        if(other.tag == "Player")
+        if((string)data[3] == this.tag)
         {
-            playerToModify = other.gameObject.GetComponent<MovePlayer>();
+            Debug.Log($"{sender} will switch to {gameModeToChangeTo}");
+            playerToModify = (MovePlayer)sender;
             
             ChangeGamemode(gameModeToChangeTo);
-            
         }
+        
     }
     public void ChangeGamemode(gamemode g)
     {

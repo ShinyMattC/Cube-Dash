@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 8522397446387546008}
   - component: {fileID: 6810323649644195740}
   - component: {fileID: 1008693285441008610}
+  - component: {fileID: 9053075564889068686}
   m_Layer: 0
   m_Name: new new new spike
   m_TagString: Obstacle
@@ -127,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   spawnPoint: {fileID: 0}
+  camFollow: {fileID: 0}
 --- !u!114 &6810323649644195740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,9 +143,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   curPosition: {x: 0, y: 0, z: 0}
-  curRotation: {x: 0, y: 0, z: 0, w: 0}
+  curRotation: {x: 0, y: 0, z: 0}
   editor: {fileID: 0}
   _name: Spike
+  objectOriginalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &1008693285441008610
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -157,3 +160,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.21343994, y: 0.3915863, z: 0.21069336}
   m_Center: {x: 0.001373291, y: 0.08769989, z: 0.002746582}
+--- !u!114 &9053075564889068686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8813685526598557041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36f2b11a2e2cf24c910ad252c036045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: fa4261c77a02b6943b996dbf6bd326f1, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8522397446387546008}
+        m_MethodName: KillPlayer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System;
 
 public class BlockItem : MonoBehaviour
 {
@@ -87,10 +88,7 @@ public class BlockItem : MonoBehaviour
             
             
         }
-        else
-        {
-            return;
-        }
+        
     }
 }
 

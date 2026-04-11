@@ -13,7 +13,7 @@ public class Spike : MonoBehaviour
     }
     private void Update()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        //player = GameObject.FindGameObjectWithTag("Player");
         spawnPoint = GameObject.FindGameObjectWithTag("Spawn Point");
     }
     private void Start()
@@ -37,5 +37,13 @@ public class Spike : MonoBehaviour
         //player.GetComponent<AudioSource>().Stop();
         //player.GetComponent<AudioSource>().Play();
     } 
-
+    public void KillPlayer(Component sender, params object[] data)
+    {
+        if((string)data[3] == this.tag)
+        {
+            player = sender.gameObject;
+            Die();
+        }
+        
+    }
 }
