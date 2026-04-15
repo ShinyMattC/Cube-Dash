@@ -18,7 +18,7 @@ public class MovePlayer : MonoBehaviour
 
     public LayerMask groundLayer;
     public float groundCheckRadius = 5f;
-    public Transform groundCheck;
+    public Transform groundCheck, groundcheck2;
 
 
     bool isGrounded = false;
@@ -119,7 +119,7 @@ public class MovePlayer : MonoBehaviour
                 break;
 
         }
-        Invoke(gameMode.ToString(), Time.deltaTime);
+        Invoke(gameMode.ToString(), 0);
 
         if(Input.GetKeyDown(KeyCode.Escape))
         {
@@ -146,7 +146,7 @@ public class MovePlayer : MonoBehaviour
             isGrounded = false;
             isJumping = true;
         }
-        if (isJumping && !isGrounded || !isJumping && !isGrounded)
+        if ((isJumping && !isGrounded) || (!isJumping && !isGrounded))
         {
             switch (rotateDirection)
             {
@@ -171,7 +171,7 @@ public class MovePlayer : MonoBehaviour
 
             }
         }
-        else
+        else if(isGrounded)
         {
             cubeModel.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
@@ -222,6 +222,7 @@ public class MovePlayer : MonoBehaviour
         if (Input.GetMouseButton(0) && !isUpsideDown && isGrounded)
         {
             isUpsideDown = true;
+            isGrounded = false;
             Physics.gravity = new Vector3(0, 9.81f, 0);
             transform.rotation = Quaternion.Euler(0, 0, 180);
 
@@ -229,13 +230,14 @@ public class MovePlayer : MonoBehaviour
         else if (Input.GetMouseButton(0) && isUpsideDown && isGrounded) 
         {
             isUpsideDown = false;
+            isGrounded = false;
             Physics.gravity = new Vector3(0, -9.81f, 0);
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Collider[] colliders = Physics.OverlapSphere(groundCheck.position, groundCheckRadius, groundLayer);
+        Collider[] colliders = (isUpsideDown) ? Physics.OverlapSphere(groundcheck2.position, groundCheckRadius, groundLayer) : Physics.OverlapSphere(groundCheck.position, groundCheckRadius, groundLayer);
         isGrounded = true;
         
     }
