@@ -237,8 +237,12 @@ public class MovePlayer : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Collider[] colliders = (isUpsideDown) ? Physics.OverlapSphere(groundcheck2.position, groundCheckRadius, groundLayer) : Physics.OverlapSphere(groundCheck.position, groundCheckRadius, groundLayer);
-        isGrounded = true;
+        Collider[] colliders = Physics.OverlapSphere(groundCheck.position, groundCheckRadius, groundLayer);
+        if(collision.transform.tag != "Yellow Jump Orb")
+        {
+            isGrounded = true;
+        }
+        
         
     }
     

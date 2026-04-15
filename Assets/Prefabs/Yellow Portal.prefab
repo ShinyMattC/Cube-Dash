@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 217a5c6617d3eee44af6c6364e99c432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 16
+  id: 5
   curPosition: {x: 0, y: 0, z: 0}
   curRotation: {x: 0, y: 0, z: 0}
   editor: {fileID: 0}

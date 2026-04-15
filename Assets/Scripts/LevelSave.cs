@@ -47,10 +47,14 @@ public class LevelSave : MonoBehaviour
         {
             SaveLevel();
         }
-        levelName = inp_levelName.text;
+        if (inp_levelName != null && inp_levelAuthor != null && inp_songName != null && inp_songAuthor != null)
+        {
+            levelName = inp_levelName.text;
         levelAuthor = inp_levelAuthor.text;
         songName = inp_songName.text;
         songAuthor = inp_songAuthor.text;
+        }
+        
     }
     private void Awake()
     {

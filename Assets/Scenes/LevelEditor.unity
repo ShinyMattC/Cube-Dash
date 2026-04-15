@@ -3353,7 +3353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774caaf1e5de4064a95dce4f350be6e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 17
+  id: 16
   quantity: 9999999
   quantityText: {fileID: 129858224}
   clicked: 0

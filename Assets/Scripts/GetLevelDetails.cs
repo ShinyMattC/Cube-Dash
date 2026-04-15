@@ -140,7 +140,13 @@ public class GetLevelDetails : MonoBehaviour
     public void LoadLevel()
     {
         LoadLevelManager.Instance.levelLoader = this;
-        if (inp_levelName != null) { LoadLevelManager.Instance.levelName = inp_levelName.text; } 
+        if (inp_levelName != null) { 
+            LoadLevelManager.Instance.levelName = inp_levelName.text; 
+        }
+        else
+        {
+            LoadLevelManager.Instance.levelName = levelSave.levelName;
+        } 
         DontDestroyOnLoad(transform.root.gameObject);
         SceneManager.LoadSceneAsync(9);
 
@@ -148,7 +154,7 @@ public class GetLevelDetails : MonoBehaviour
     public void LoadLevel(string levelName)
     {
         LoadLevelManager.Instance.levelLoader = this;
-        if (inp_levelName != null) { LoadLevelManager.Instance.levelName = levelName; }
+        LoadLevelManager.Instance.levelName = levelName;
         DontDestroyOnLoad(transform.root.gameObject);
         SceneManager.LoadSceneAsync(9);
 
