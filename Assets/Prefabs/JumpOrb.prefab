@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3825738955047186057}
   - component: {fileID: 4272569733230682789}
   - component: {fileID: 7427661437686648893}
+  - component: {fileID: 423042553748162547}
   m_Layer: 0
   m_Name: JumpOrb
   m_TagString: Yellow Jump Orb
@@ -108,9 +109,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   curPosition: {x: 0, y: 0, z: 0}
-  curRotation: {x: 0, y: 0, z: 0, w: 0}
+  curRotation: {x: 0, y: 0, z: 0}
   editor: {fileID: 0}
   _name: JOrb
+  objectOriginalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &7427661437686648893
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -124,3 +126,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &423042553748162547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3825738955047186070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36f2b11a2e2cf24c910ad252c036045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: fa4261c77a02b6943b996dbf6bd326f1, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3825738955047186057}
+        m_MethodName: GetPlayer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

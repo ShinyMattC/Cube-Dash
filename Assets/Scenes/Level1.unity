@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.49825913, g: 0.5510744, b: 0.6200287, a: 1}
+  m_IndirectSpecularColor: {r: 0.49825907, g: 0.5510743, b: 0.6200284, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4806,7 +4806,7 @@ PrefabInstance:
     - target: {fileID: 377778788475027580, guid: 9d9b86f46705d9a48b6982544012a755,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 150.46
       objectReference: {fileID: 0}
     - target: {fileID: 377778788475027580, guid: 9d9b86f46705d9a48b6982544012a755,
         type: 3}
@@ -4816,7 +4816,7 @@ PrefabInstance:
     - target: {fileID: 377778788475027580, guid: 9d9b86f46705d9a48b6982544012a755,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 104.95
+      value: -43.71
       objectReference: {fileID: 0}
     - target: {fileID: 377778788475027580, guid: 9d9b86f46705d9a48b6982544012a755,
         type: 3}
@@ -4860,6 +4860,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d9b86f46705d9a48b6982544012a755, type: 3}
+--- !u!1 &377778787505167359 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 377778788475027584, guid: 9d9b86f46705d9a48b6982544012a755,
+    type: 3}
+  m_PrefabInstance: {fileID: 377778787505167358}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &377778787505167360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377778787505167359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeef1f467d2903c4aa61bb562ba703c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &377778787505167361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377778787505167359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36f2b11a2e2cf24c910ad252c036045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: fa4261c77a02b6943b996dbf6bd326f1, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 377778787505167360}
+        m_MethodName: GoToScene
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &900081514624369185
 PrefabInstance:
   m_ObjectHideFlags: 0

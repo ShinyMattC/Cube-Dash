@@ -13,20 +13,22 @@ public class GamemodePortal : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void OnTriggerEnter(Collider other)
+    public void Switch(Component sender, params object[] data)
     {
-        if(other.tag == "Player")
+        if((string)data[3] == this.tag)
         {
-            playerToModify = other.gameObject.GetComponent<MovePlayer>();
+            Debug.Log($"{sender} will switch to {gameModeToChangeTo}");
+            playerToModify = (MovePlayer)sender;
             
             ChangeGamemode(gameModeToChangeTo);
-            
         }
+        
     }
     public void ChangeGamemode(gamemode g)
     {
         playerToModify.gameMode = g;
         Debug.Log($"Changed the player's gamemode to {playerToModify.gameMode}.");
+        Physics.gravity = new Vector3(0, (playerToModify.shipYVelocity* -9.81f) / playerToModify.shipYVelocity, 0);
         
     }
 }

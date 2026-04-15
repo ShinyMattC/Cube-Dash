@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "3d geometry dash.sln"
+    "dotnet.defaultSolution": "3d geometry dash.sln",
+    "dotnet.preferCSharpExtension": true
 }

@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 3599706086491438163}
   - component: {fileID: 3599706086491438156}
   - component: {fileID: 6132920337372002319}
+  - component: {fileID: 1036199423380959125}
+  - component: {fileID: -2383501205132278146}
   m_Layer: 0
   m_Name: SpeedPortal(FAST)
-  m_TagString: Untagged
+  m_TagString: Fast Speed Portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,6 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedValues: 7
+  player: {fileID: 0}
 --- !u!212 &3599706086491438156
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -122,8 +125,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 217a5c6617d3eee44af6c6364e99c432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 9
+  id: 36
   curPosition: {x: 0, y: 0, z: 0}
-  curRotation: {x: 0, y: 0, z: 0, w: 0}
+  curRotation: {x: 0, y: 0, z: 0}
   editor: {fileID: 0}
   _name: SpeedFast
+  objectOriginalColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &1036199423380959125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3599706086491438160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36f2b11a2e2cf24c910ad252c036045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: fa4261c77a02b6943b996dbf6bd326f1, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5803118083220442217, guid: a4afe8008a1600b48ad27d829c3da98e,
+          type: 3}
+        m_MethodName: SetSpeed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-2383501205132278146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3599706086491438160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36f2b11a2e2cf24c910ad252c036045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 5bd0df83892fbb34f83cad09c5ebea92, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5803118083220442217, guid: a4afe8008a1600b48ad27d829c3da98e,
+          type: 3}
+        m_MethodName: SetPlayer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

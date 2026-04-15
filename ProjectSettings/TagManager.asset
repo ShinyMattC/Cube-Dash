@@ -18,6 +18,12 @@ TagManager:
   - Cube Portal
   - Ball Portal
   - Block
+  - Speed Portal
+  - Normal Speed Portal
+  - Very Fast Speed Portal
+  - Fast Speed Portal
+  - Slow Speed Portal
+  - Very Slow Speed Portal
   layers:
   - Default
   - TransparentFX

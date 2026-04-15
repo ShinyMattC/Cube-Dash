@@ -195,6 +195,8 @@ MonoBehaviour:
   aus: {fileID: 0}
   cubeModel: {fileID: 6371904883281112829}
   editor: {fileID: 0}
+  onTriggerEnter: {fileID: 11400000, guid: fa4261c77a02b6943b996dbf6bd326f1, type: 2}
+  onPlayerSpawned: {fileID: 11400000, guid: 5bd0df83892fbb34f83cad09c5ebea92, type: 2}
 --- !u!1 &6371904883281112829
 GameObject:
   m_ObjectHideFlags: 0

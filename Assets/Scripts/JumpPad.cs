@@ -8,10 +8,32 @@ public class JumpPad : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.Find("Player");
+
     }
     public void JumpPadFunction(float jumpForce)
     {
-        player.GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);     
+        /*if(playerMove.isUpsideDown == false)
+        {
+            playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
+        else
+        {
+            playerRb.AddForce(Vector3.down * jumpForce, ForceMode.Impulse);
+        }*/
+        if(Input.GetMouseButton(0))
+        {
+            player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            player.GetComponent<Rigidbody>().AddForce((player.GetComponent<MovePlayer>().isUpsideDown ? Vector3.down : Vector3.up) * jumpForce, ForceMode.Impulse);
+        }
+        
+    }
+    public void GetPlayer(Component sender, params object[] data)
+    {
+        if((string)data[3] == this.tag)
+        {
+            player = sender.gameObject;
+        JumpPadFunction((int)data[2]);
+        }
+        
     }
 }

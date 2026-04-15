@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641222, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1002,22 +1002,22 @@ PrefabInstance:
     - target: {fileID: 6371904882751867226, guid: 770585323d0104d4bb679e0eb83b7e44,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99733794
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6371904882751867226, guid: 770585323d0104d4bb679e0eb83b7e44,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6371904882751867226, guid: 770585323d0104d4bb679e0eb83b7e44,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6371904882751867226, guid: 770585323d0104d4bb679e0eb83b7e44,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.07291781
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6371904882751867226, guid: 770585323d0104d4bb679e0eb83b7e44,
         type: 3}
@@ -1032,7 +1032,7 @@ PrefabInstance:
     - target: {fileID: 6371904882751867226, guid: 770585323d0104d4bb679e0eb83b7e44,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 8.363001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6371904882751867230, guid: 770585323d0104d4bb679e0eb83b7e44,
         type: 3}
@@ -1122,6 +1122,8 @@ GameObject:
   - component: {fileID: 391500594}
   - component: {fileID: 391500593}
   - component: {fileID: 391500592}
+  - component: {fileID: 391500597}
+  - component: {fileID: 391500596}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Level End
@@ -1203,6 +1205,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 64
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!114 &391500596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391500591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36f2b11a2e2cf24c910ad252c036045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: fa4261c77a02b6943b996dbf6bd326f1, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 391500597}
+        m_MethodName: GoToScene
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &391500597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391500591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeef1f467d2903c4aa61bb562ba703c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &430296324
 PrefabInstance:
   m_ObjectHideFlags: 0
