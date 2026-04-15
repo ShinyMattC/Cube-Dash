@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 377778788475027582}
   - component: {fileID: 377778788475027585}
   - component: {fileID: 6728895164690679990}
+  - component: {fileID: 8654799381666302765}
+  - component: {fileID: 8178795017392260590}
   m_Layer: 0
   m_Name: EndLevel
   m_TagString: Level End
@@ -108,6 +110,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 15
   curPosition: {x: 0, y: 0, z: 0}
-  curRotation: {x: 0, y: 0, z: 0, w: 0}
+  curRotation: {x: 0, y: 0, z: 0}
   editor: {fileID: 0}
   _name: LevelEnd
+  objectOriginalColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &8654799381666302765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377778788475027584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36f2b11a2e2cf24c910ad252c036045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: fa4261c77a02b6943b996dbf6bd326f1, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8178795017392260590}
+        m_MethodName: GoToScene
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8178795017392260590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377778788475027584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeef1f467d2903c4aa61bb562ba703c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

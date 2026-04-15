@@ -69,6 +69,7 @@ public class MovePlayer : MonoBehaviour
     float velocity;
 
     public EventSO onTriggerEnter;
+    public EventSO onPlayerSpawned;
     // Start is called before the first frame update
     void Start()
     {
@@ -83,22 +84,11 @@ public class MovePlayer : MonoBehaviour
     }
     public void Awake()
     {
-        
+        onPlayerSpawned.raise(this, GetComponent<MovePlayer>());
     }
-    /*public void OnEnable()
-    {
-        GameObject[] spikes = GameObject.FindGameObjectsWithTag("Obstacle");
-        foreach (GameObject s in spikes)
-        {
-            Spike _S = s.GetComponent<Spike>();
-            _S.SetPlayer(this.gameObject);
-        }
-        //AudioSource.PlayClipAtPoint(aus.clip, transform.position);
-    }*/
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = Vector3.ClampMagnitude(rb.velocity, 15);
         Vector3 pos = transform.position;
 
         switch (moveDirection)
@@ -205,13 +195,10 @@ public class MovePlayer : MonoBehaviour
             Physics.gravity = new Vector3(0, -9.81f, 0);
             if (Input.GetMouseButton(0))
             {
-                //rb.velocity += new Vector3(0, shipYVelocity, 0);
-                //Mathf.Clamp(rb.velocity.y, 0, 10);
                 Physics.gravity = new Vector3(0, -shipYVelocity * -9.81f, 0);
             }
             else
             {
-                //rb.velocity += new Vector3(0, -shipYVelocity &, 0);
                 Physics.gravity = new Vector3(0, shipYVelocity* -9.81f, 0);
             }
         }
@@ -220,13 +207,10 @@ public class MovePlayer : MonoBehaviour
             Physics.gravity = new Vector3(0, 9.81f, 0);
             if (Input.GetMouseButton(0))
             {
-                //rb.velocity += new Vector3(0, -shipYVelocity, 0);
-                //Mathf.Clamp(rb.velocity.y, 0, -10);
                 Physics.gravity = new Vector3(0, -shipYVelocity * 9.81f, 0);
             }
             else
             {
-                //rb.velocity += new Vector3(0, shipYVelocity, 0);
                 Physics.gravity = new Vector3(0, shipYVelocity * 9.81f, 0);
             }
         }
@@ -258,63 +242,11 @@ public class MovePlayer : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        /*switch(other.tag)
-        {
-            case "Yellow Jump Pad":
-                other.gameObject.GetComponent<JumpPad>().JumpPadFunction(5.6f);
-                break;
-            case "Obstacle":
-                other.gameObject.GetComponent<Spike>().SetPlayer(this.gameObject);
-                other.gameObject.GetComponent<Spike>().Die();
-                isJumping = false;
-                transform.rotation = Quaternion.Euler(0, 0, 0);
-                break;
-            case "Yellow Jump Orb":
-            
-                    //other.gameObject.GetComponent<JumpOrb>().JumpOrbFunction(8);
-                if (Input.GetMouseButton(0))
-                {
-                    JumpOrbFunction(8);
-                }
-                break;
-            case "Level End":
-                SceneManager.LoadScene(2);
-                break;
-            case "Yellow Portal":
-                other.gameObject.GetComponent<YellowPortal>().ReverseGravity();
-                isUpsideDown = true;
-                break;
-            case "Blue Portal":
-                isUpsideDown = false;
-                other.gameObject.GetComponent<BluePortal>().RevertGravity();
-                break;
-            case "Ship Portal":
-                other.gameObject.GetComponent<GamemodePortal>().ChangeGamemode(gamemode.Ship);
-                break;
-            case "Cube Portal":
-                other.gameObject.GetComponent<GamemodePortal>().ChangeGamemode(gamemode.Cube);
-                break;
-            case "Ball Portal":
-                other.gameObject.GetComponent<GamemodePortal>().ChangeGamemode(gamemode.Ball);
-                break;
-        }*/
-        onTriggerEnter.raise(this, GetComponent<MovePlayer>(), isUpsideDown, 6, other.tag);
+
+        
+        onTriggerEnter.raise(this, GetComponent<MovePlayer>(), isUpsideDown, 6, other.tag, 2);
+        Debug.Log(other.tag);
     
     }
-    /*public void JumpOrbFunction(float jumpForce)
-    {
-        /*if(playerMove.isUpsideDown == false)
-        {
-            playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        }
-        else
-        {
-            playerRb.AddForce(Vector3.down * jumpForce, ForceMode.Impulse);
-        }
-        if(Input.GetMouseButton(0))
-        {
-            rb.AddForce(((isUpsideDown) ? Vector3.down : Vector3.up) * jumpForce, ForceMode.Impulse);
-        }
-        
-    }*/
+    
 }

@@ -28,6 +28,7 @@ public class GamemodePortal : MonoBehaviour
     {
         playerToModify.gameMode = g;
         Debug.Log($"Changed the player's gamemode to {playerToModify.gameMode}.");
+        Physics.gravity = new Vector3(0, (playerToModify.shipYVelocity* -9.81f) / playerToModify.shipYVelocity, 0);
         
     }
 }

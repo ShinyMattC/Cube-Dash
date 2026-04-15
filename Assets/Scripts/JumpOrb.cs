@@ -36,6 +36,7 @@ public class JumpOrb : MonoBehaviour
         }*/
         if(Input.GetMouseButton(0))
         {
+            playerRb.velocity = Vector3.zero;
             playerRb.AddForce((playerMove.isUpsideDown ? Vector3.down : Vector3.up) * jumpForce, ForceMode.Impulse);
         }
         
