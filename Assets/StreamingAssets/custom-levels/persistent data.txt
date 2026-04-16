@@ -1,0 +1,6 @@
+name: persistent data§
+author: §
+songName: §
+songAuthor: §
+levelData: {
+}

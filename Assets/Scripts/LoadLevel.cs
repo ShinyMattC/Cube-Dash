@@ -10,7 +10,7 @@ public class LoadLevel : MonoBehaviour
         {
             GetLevelDetails gld = LoadLevelManager.Instance.levelLoader;
 // test
-            gld.GetLevelBlockDetails(Application.persistentDataPath + "/custom-levels/", $"{LoadLevelManager.Instance.levelName}.txt");
+            gld.GetLevelBlockDetails(Application.streamingAssetsPath + "/custom-levels/", $"{LoadLevelManager.Instance.levelName}.txt");
             gld.PlaceBlocks(gld.parsedDetails);
             Destroy(GameObject.Find("Canvas"));
             Instantiate(LoadLevelManager.Instance.player, GameObject.FindGameObjectWithTag("Spawn Point").transform.position, Quaternion.identity);

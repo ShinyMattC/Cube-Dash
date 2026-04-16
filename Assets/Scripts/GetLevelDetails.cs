@@ -44,12 +44,12 @@ public class GetLevelDetails : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Tab))
         {
             //PlaceBlocks(string.Empty);
-            GetMetadata(Application.persistentDataPath + "/custom-levels/", $"{levelSave.levelName}.txt");
+            GetMetadata(Application.streamingAssetsPath + "/custom-levels/", $"{levelSave.levelName}.txt");
 
         }
         if(Input.GetKeyDown(KeyCode.Insert))
         {
-            GetLevelBlockDetails(Application.persistentDataPath + "/custom-levels/", $"{levelSave.levelName}.txt");
+            GetLevelBlockDetails(Application.streamingAssetsPath + "/custom-levels/", $"{levelSave.levelName}.txt");
             PlaceBlocks(parsedDetails);
         }
         if(Input.GetKeyDown(KeyCode.F2))

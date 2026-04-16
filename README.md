@@ -1,6 +1,6 @@
 # DEV REPOSITORY
 
-There is a `dev` repository of the repository "Cube Dash". If you see more commits than `main`, and your name is not ShinyMattC, you are NOT authorised to enter that repository. 
+New changes are made in the `dev` repository, and major changes like overhauls are made in a new branch. For example, a new camera system will have a new branch, called `camera-system` or something like that, be created. 
 
 ## Details
 

@@ -33,7 +33,7 @@ public class LevelSave : MonoBehaviour
         blockIDs = new List<int>();
         blockPositions = new List<Vector3>();
         lm = GameObject.Find("LevelEditorManager").GetComponent<LevelEditorManager>();
-        levelPth = Application.persistentDataPath + "/custom-levels/";
+        levelPth = Application.streamingAssetsPath + "/custom-levels/";
         if(!Directory.Exists(levelPth))
         {
             Directory.CreateDirectory(levelPth);
