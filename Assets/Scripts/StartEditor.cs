@@ -8,7 +8,7 @@ public class StartEditor : MonoBehaviour
     public GameObject player;
     [SerializeField] int amountOfPlayers = 0;
 
-
+    public EventSO onEditorGameStart;
     
     // Start is called before the first frame update
     void Start()
@@ -32,10 +32,11 @@ public class StartEditor : MonoBehaviour
                 {
                     try
                     {
-                        GameObject.Instantiate(player, GameObject.FindGameObjectWithTag("Spawn Point").transform.position, Quaternion.identity); // make player
+                        GameObject p = Instantiate(player, GameObject.FindGameObjectWithTag("Spawn Point").transform.position, Quaternion.identity); // make player
                         amountOfPlayers++;
                         TextMeshProUGUI errText = GameObject.Find("Error text").GetComponent<TextMeshProUGUI>();
                         errText.text = "";
+                        onEditorGameStart.raise(this, p.GetComponent<AudioSource>(), GameObject.FindGameObjectWithTag("Level Editor Manager").GetComponent<GetLevelDetails>());
                     }
                     catch
                     {

@@ -34,8 +34,8 @@ public class Spike : MonoBehaviour
         player.GetComponent<MovePlayer>().gameMode = gamemode.Cube;
         camFollow.transform.position = camFollow.followerOriginalPosition;
         camFollow.offset = camFollow.offsetOriginal;
-        //player.GetComponent<AudioSource>().Stop();
-        //player.GetComponent<AudioSource>().Play();
+        player.GetComponent<AudioSource>().Stop();
+        player.GetComponent<AudioSource>().Play();
     } 
     public void KillPlayer(Component sender, params object[] data)
     {

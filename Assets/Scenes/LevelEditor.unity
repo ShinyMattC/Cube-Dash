@@ -524,7 +524,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 263323605}
   m_Direction: 0
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -864,7 +864,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &134344841
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1762,6 +1762,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 214297353}
   m_CullTransparentMesh: 0
+--- !u!1 &229748099
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 229748100}
+  - component: {fileID: 229748102}
+  - component: {fileID: 229748101}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &229748100
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229748099}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 635.86523, y: 325.99353, z: -176.02184}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &229748101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229748099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36f2b11a2e2cf24c910ad252c036045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 18fabbfdfd689a24091a417065040d12, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 229748102}
+        m_MethodName: GetPlayer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &229748102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229748099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bceacf16dd5c324ca85425a8de235e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  songToPlay: {fileID: 0}
+  volume: 0
+  audioSource: {fileID: 0}
+  lm: {fileID: 0}
 --- !u!1 &230640788
 GameObject:
   m_ObjectHideFlags: 0
@@ -6273,8 +6348,10 @@ MonoBehaviour:
   - {fileID: 1765568807518509010, guid: 8f760f0e8d6286d40be56986567a0490, type: 3}
   - {fileID: 2991734972424709570, guid: 203c83f9d7ed04c4bbb6a5b083b854bf, type: 3}
   player: {fileID: 0}
-  inp_levelName: {fileID: 0}
+  inp_levelName: {fileID: 34517227}
+  inp_songName: {fileID: 1025940899}
   levelName: 
+  songName: 
 --- !u!1 &960886197
 GameObject:
   m_ObjectHideFlags: 0
@@ -7294,6 +7371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 6371904882751867230, guid: 770585323d0104d4bb679e0eb83b7e44, type: 3}
   amountOfPlayers: 0
+  onEditorGameStart: {fileID: 11400000, guid: 18fabbfdfd689a24091a417065040d12, type: 2}
 --- !u!1 &1042666930
 GameObject:
   m_ObjectHideFlags: 0
@@ -10643,7 +10721,14 @@ MonoBehaviour:
     K - Move block
     1 unit up
 
-    L - Move block 1 unit to the right'
+    L - Move block 1 unit to the right
+
+    Y - save level
+
+    Tab
+    - Get metadata of level
+
+    F2 - Load level'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10670,7 +10755,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10.85
+  m_fontSize: 8.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -13873,6 +13958,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 6371904882751867230, guid: 770585323d0104d4bb679e0eb83b7e44, type: 3}
   amountOfPlayers: 0
+  onEditorGameStart: {fileID: 0}
 --- !u!1 &1885112392
 GameObject:
   m_ObjectHideFlags: 0

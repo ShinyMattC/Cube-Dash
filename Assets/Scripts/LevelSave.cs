@@ -9,6 +9,7 @@ using UnityEditor;
 public class LevelSave : MonoBehaviour
 {
     private string levelPth;
+    private string songPth;
     public string levelName;
     public string levelAuthor;
     public string songName;
@@ -34,9 +35,11 @@ public class LevelSave : MonoBehaviour
         blockPositions = new List<Vector3>();
         lm = GameObject.Find("LevelEditorManager").GetComponent<LevelEditorManager>();
         levelPth = Application.streamingAssetsPath + "/custom-levels/";
-        if(!Directory.Exists(levelPth))
+        songPth = Application.streamingAssetsPath + "/custom-music/";
+        if(!Directory.Exists(levelPth) || !Directory.Exists(songPth))
         {
             Directory.CreateDirectory(levelPth);
+            Directory.CreateDirectory(songPth);
         }
     }
 
@@ -49,10 +52,10 @@ public class LevelSave : MonoBehaviour
         }
         if (inp_levelName != null && inp_levelAuthor != null && inp_songName != null && inp_songAuthor != null)
         {
-            levelName = inp_levelName.text;
-        levelAuthor = inp_levelAuthor.text;
-        songName = inp_songName.text;
-        songAuthor = inp_songAuthor.text;
+            levelName = inp_levelName?.text;
+        levelAuthor = inp_levelAuthor?.text;
+        songName = inp_songName?.text;
+        songAuthor = inp_songAuthor?.text;
         }
         
     }

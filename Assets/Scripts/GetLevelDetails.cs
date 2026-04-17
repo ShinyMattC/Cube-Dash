@@ -30,8 +30,11 @@ public class GetLevelDetails : MonoBehaviour
     public GameObject[] prefabs = { };
     public GameObject player;
     public TMP_InputField inp_levelName;
+    public TMP_InputField inp_songName;
 
     public string levelName;
+    public string songName;
+
 
     // Start is called before the first frame update
     void Start()
@@ -63,12 +66,24 @@ public class GetLevelDetails : MonoBehaviour
         string levelTxt = levelPath + levelName;
 
         string[] details = File.ReadAllLines(levelTxt);
+        Dictionary<string, string> metadata = new Dictionary<string, string>();
+        string[] seperator = {": "};
 
         foreach(string s in details)
         {
-            int found = s.IndexOf("§");
-            Debug.Log($"{s.Substring(0, found)}");
+            if(s.Contains("§"))
+            {
+                string[] temp = s.Split(seperator, StringSplitOptions.RemoveEmptyEntries);
+                temp[1] = temp[1].Substring(0, temp[1].IndexOf('§'));
+                //Debug.Log($"{temp[0]} {temp[1]}");
+                metadata.Add(temp[0], temp[1]);
+                Debug.Log(metadata.Count);
+            }
+            
+
         }
+        this.levelName = metadata["name"];
+        this.songName = metadata["songName"];
     }
     public void GetLevelBlockDetails(string levelPath, string levelName)
     {
@@ -141,11 +156,13 @@ public class GetLevelDetails : MonoBehaviour
     {
         LoadLevelManager.Instance.levelLoader = this;
         if (inp_levelName != null) { 
-            LoadLevelManager.Instance.levelName = inp_levelName.text; 
+            LoadLevelManager.Instance.levelName = inp_levelName.text;
+            LoadLevelManager.Instance.songName = inp_songName.text; 
         }
         else
         {
-            LoadLevelManager.Instance.levelName = levelSave.levelName;
+            LoadLevelManager.Instance.levelName = levelName;
+            LoadLevelManager.Instance.songName = songName; 
         } 
         DontDestroyOnLoad(transform.root.gameObject);
         SceneManager.LoadSceneAsync(9);
@@ -155,8 +172,14 @@ public class GetLevelDetails : MonoBehaviour
     {
         LoadLevelManager.Instance.levelLoader = this;
         LoadLevelManager.Instance.levelName = levelName;
+
         DontDestroyOnLoad(transform.root.gameObject);
         SceneManager.LoadSceneAsync(9);
 
+    }
+    public void simulatebuttonpress()
+    {
+        GetMetadata(Application.streamingAssetsPath + "/custom-levels/", $"{levelSave.levelName}.txt");
+        LoadLevel();
     }
 }

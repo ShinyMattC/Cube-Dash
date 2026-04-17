@@ -8,6 +8,7 @@ public class LoadLevelManager : MonoBehaviour
     public static LoadLevelManager Instance;
     public GetLevelDetails levelLoader;
     public string levelName;
+    public string songName;
     public GameObject player;
 
     private void Awake()

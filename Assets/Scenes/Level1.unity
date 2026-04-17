@@ -3060,7 +3060,7 @@ PrefabInstance:
     - target: {fileID: 6371904882751867229, guid: 770585323d0104d4bb679e0eb83b7e44,
         type: 3}
       propertyPath: moveDirection
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6371904882751867229, guid: 770585323d0104d4bb679e0eb83b7e44,
         type: 3}

@@ -18,6 +18,13 @@ public class Song : MonoBehaviour
         this.title = title;
         this.author = author;
     }
+    public Song()
+    {
+        this.song = (AudioClip)null;
+        this.length = 0;
+        this.title = "";
+        this.author = "";
+    }
     public void PlaySong(AudioClip song)
     {
         AudioSource.PlayClipAtPoint(song, Camera.main.transform.position);
