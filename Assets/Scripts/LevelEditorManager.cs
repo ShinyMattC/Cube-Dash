@@ -16,7 +16,7 @@ public class LevelEditorManager : MonoBehaviour
 
     void Start()
     {
-        
+        Destroy(GameObject.Find("LoadLevelManager_CustomLevels"));
     }
     private void Update()
     {

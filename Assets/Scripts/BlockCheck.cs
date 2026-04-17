@@ -30,6 +30,9 @@ public class BlockCheck : MonoBehaviour
             player.GetComponent<MovePlayer>().isUpsideDown = false;
             player.GetComponent<MovePlayer>().speed = 5f;
             player.GetComponent<MovePlayer>().gameMode = gamemode.Cube;
+            
+            player.GetComponent<AudioSource>().Stop();
+            player.GetComponent<AudioSource>().Play();
             camFollow.transform.position = camFollow.followerOriginalPosition;
             camFollow.offset = camFollow.offsetOriginal;
         }

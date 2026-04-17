@@ -67,6 +67,7 @@ public class MovePlayer : MonoBehaviour
 
     public LevelEditorManager editor;
     float velocity;
+    bool isCollidingWithTrigger = false;
 
     public EventSO onTriggerEnter;
     public EventSO onPlayerSpawned;
@@ -248,11 +249,16 @@ public class MovePlayer : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-
-        
         onTriggerEnter.raise(this, GetComponent<MovePlayer>(), isUpsideDown, 6, other.tag, 2);
         Debug.Log(other.tag);
+        
+        
     
     }
-    
+    private void OnTriggerExit(Collider other)
+    {
+        isCollidingWithTrigger = false;
+    }
+
+
 }

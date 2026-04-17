@@ -36,6 +36,8 @@ public class StartEditor : MonoBehaviour
                         amountOfPlayers++;
                         TextMeshProUGUI errText = GameObject.Find("Error text").GetComponent<TextMeshProUGUI>();
                         errText.text = "";
+                        GetLevelDetails gld = GameObject.FindGameObjectWithTag("Level Editor Manager").GetComponent<GetLevelDetails>();
+                        gld.GetMetadata(Application.streamingAssetsPath + "/custom-levels/", $"{gld.gameObject.GetComponent<LevelSave>().levelName}.txt");
                         onEditorGameStart.raise(this, p.GetComponent<AudioSource>(), GameObject.FindGameObjectWithTag("Level Editor Manager").GetComponent<GetLevelDetails>());
                     }
                     catch

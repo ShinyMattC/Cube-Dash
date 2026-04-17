@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoadLevelManager : MonoBehaviour
 {
@@ -20,5 +21,14 @@ public class LoadLevelManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        
     }
+    private void Update()
+    {
+        if(SceneManager.GetActiveScene().ToString() == "LevelEditor")
+        {
+           Destroy(gameObject); 
+        }
+    }
+    
 }

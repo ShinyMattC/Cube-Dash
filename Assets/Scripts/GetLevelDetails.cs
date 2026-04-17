@@ -174,6 +174,7 @@ public class GetLevelDetails : MonoBehaviour
         LoadLevelManager.Instance.levelName = levelName;
 
         DontDestroyOnLoad(transform.root.gameObject);
+        
         SceneManager.LoadSceneAsync(9);
 
     }

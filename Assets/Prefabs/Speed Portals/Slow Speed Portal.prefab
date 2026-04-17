@@ -129,7 +129,7 @@ MonoBehaviour:
   curPosition: {x: 0, y: 0, z: 0}
   curRotation: {x: 0, y: 0, z: 0}
   editor: {fileID: 0}
-  _name: SpeedNormal
+  _name: SpeedSlow
   objectOriginalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &-6705469811836236310
 MonoBehaviour:
