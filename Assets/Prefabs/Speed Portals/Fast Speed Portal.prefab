@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2920820047243938365}
   - component: {fileID: -6705469811836236310}
   - component: {fileID: -6645716241727390756}
+  - component: {fileID: 76374179212164689}
   m_Layer: 0
   m_Name: Fast Speed Portal
   m_TagString: Fast Speed Portal
@@ -176,6 +177,33 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5803118083220442217}
         m_MethodName: SetPlayer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &76374179212164689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2992126458239660262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36f2b11a2e2cf24c910ad252c036045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 47388731c04b1e24c86863599b65557b, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2920820047243938365}
+        m_MethodName: ButtonClick
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1765568807518509012}
   - component: {fileID: 1765568807518509011}
   - component: {fileID: 6307605820480536499}
+  - component: {fileID: -6264025140517156469}
   m_Layer: 0
   m_Name: 45 Slope
   m_TagString: Untagged
@@ -326,6 +327,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 14
   curPosition: {x: 0, y: 0, z: 0}
-  curRotation: {x: 0, y: 0, z: 0, w: 0}
+  curRotation: {x: 0, y: 0, z: 0}
   editor: {fileID: 0}
   _name: Slope45
+  objectOriginalColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &-6264025140517156469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765568807518509010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36f2b11a2e2cf24c910ad252c036045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 47388731c04b1e24c86863599b65557b, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6307605820480536499}
+        m_MethodName: ButtonClick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

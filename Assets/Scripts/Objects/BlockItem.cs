@@ -42,6 +42,7 @@ public class BlockItem : MonoBehaviour
             }
             if (isSelected)
             {
+               
                 if (Input.GetMouseButtonDown(1))
                 {
                     isSelected = false;
@@ -89,6 +90,46 @@ public class BlockItem : MonoBehaviour
             
         }
         
+    }
+    public void ButtonClick(Component sender, params object[] data)
+    {
+        TransformButton t = (TransformButton)sender;
+        switch((editorbuttontype)data[0])
+        {
+            case editorbuttontype.MoveLeft:
+            this.GetComponent<Transform>().Translate(-0.5f, 0, 0, Space.World);
+            break;
+            case editorbuttontype.MoveRight:
+            this.GetComponent<Transform>().Translate(0.5f, 0, 0, Space.World);
+            break;
+            case editorbuttontype.MoveUp:
+            this.GetComponent<Transform>().Translate(0, 0.5f, 0, Space.World);
+            break;
+            case editorbuttontype.MoveDown:
+            this.GetComponent<Transform>().Translate(0, -0.5f, 0, Space.World);
+            break;
+            case editorbuttontype.RotateRight45:
+            this.GetComponent<Transform>().Rotate(0, 0, 45);
+            break;
+            case editorbuttontype.RotateLeft45:
+            this.GetComponent<Transform>().Rotate(0, 0, -45);
+            break;
+            case editorbuttontype.FlipH:
+            this.GetComponent<Transform>().Rotate(0, -180, 0);
+            break;
+            case editorbuttontype.FlipV:
+            this.GetComponent<Transform>().Rotate(0, 180, 0);
+            break;
+            case editorbuttontype.Delete:
+                isSelected = false;
+                LevelSave levelSave = editor.GetComponent<LevelSave>();
+    
+                levelSave.OnBlockRemoved(this.GetComponent<BlockItem>());
+                Destroy(this.gameObject);
+                editor.itemButtons[id].quantity++;
+                editor.itemButtons[id].quantityText.text = editor.itemButtons[id].quantity.ToString();
+            break;
+        }
     }
 }
 
