@@ -9,13 +9,13 @@ public class SceneButton : MonoBehaviour
     public void ButtonSceneLoad(int sceneIndex)
     {
         QualitySettings.SetQualityLevel(PlayerPrefs.GetInt("graphicsTier"));
-        SceneManager.LoadSceneAsync(sceneIndex);
+        SceneManager.LoadScene(sceneIndex);
     }
     public void ButtonSceneLoadAndSave(int sceneIndex)
     {
         LevelSave levelSave = GameObject.FindGameObjectWithTag("Level Editor Manager").GetComponent<LevelSave>();
         levelSave.SaveLevel();
         QualitySettings.SetQualityLevel(PlayerPrefs.GetInt("graphicsTier"));
-        SceneManager.LoadSceneAsync(sceneIndex);
+        SceneManager.LoadScene(sceneIndex);
     }
 }

@@ -352,6 +352,7 @@ MonoBehaviour:
   songToPlay: {fileID: 0}
   volume: 0
   audioSource: {fileID: 0}
+  lm: {fileID: 0}
 --- !u!4 &788124898
 Transform:
   m_ObjectHideFlags: 0

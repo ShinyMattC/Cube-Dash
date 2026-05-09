@@ -9,7 +9,7 @@ public class EndLevel : MonoBehaviour
     {
         if((string)data[3] == this.tag)
         {
-            SceneManager.LoadSceneAsync((int)data[4]);
+            SceneManager.LoadScene((int)data[4]);
         }
     }
 }

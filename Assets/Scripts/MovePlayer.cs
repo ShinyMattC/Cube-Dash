@@ -152,22 +152,22 @@ public class MovePlayer : MonoBehaviour
             switch (rotateDirection)
             {
                 case direction.up:
-                    cubeModel.transform.Rotate(0,rotationSpeed, 0);
+                    cubeModel.transform.Rotate(0,rotationSpeed * Time.deltaTime, 0);
                     break;
                 case direction.down:
-                    cubeModel.transform.Rotate(0, rotationSpeed, 0);
+                    cubeModel.transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
                     break;
                 case direction.back:
-                    cubeModel.transform.Rotate(rotationSpeed, 0, 0);
+                    cubeModel.transform.Rotate(rotationSpeed * Time.deltaTime, 0, 0);
                     break;
                 case direction.forward:
-                    cubeModel.transform.Rotate(rotationSpeed, 0, 0);
+                    cubeModel.transform.Rotate(rotationSpeed * Time.deltaTime, 0, 0);
                     break;
                 case direction.left:
-                    cubeModel.transform.Rotate(0, 0,rotationSpeed);
+                    cubeModel.transform.Rotate(0, 0,rotationSpeed * Time.deltaTime);
                     break;
                 case direction.right:
-                    cubeModel.transform.Rotate(0, 0, -rotationSpeed);
+                    cubeModel.transform.Rotate(0, 0, -rotationSpeed * Time.deltaTime);
                     break;
 
             }
