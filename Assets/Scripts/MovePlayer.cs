@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public enum gamemode
@@ -71,6 +72,10 @@ public class MovePlayer : MonoBehaviour
 
     public EventSO onTriggerEnter;
     public EventSO onPlayerSpawned;
+    GUIContent content;
+    GUIStyle style = new GUIStyle();
+    [SerializeField] Texture debugTex;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -80,12 +85,19 @@ public class MovePlayer : MonoBehaviour
         Time.timeScale = 1;
         velocity = rb.velocity.y;
         editor = (SceneManager.GetActiveScene().ToString() == "LevelEditor") ? GameObject.Find("LevelEditorManager").GetComponent<LevelEditorManager>() : (LevelEditorManager)null;
+        
         Physics.gravity = new Vector3(0, -9.81f, 0);
         gameMode = gamemode.Cube;
     }
     public void Awake()
     {
+        style.alignment = TextAnchor.MiddleCenter;
+        style.imagePosition = ImagePosition.ImageAbove;
         onPlayerSpawned.raise(this, GetComponent<MovePlayer>());
+    }
+    void OnGUI()
+    {
+        GUI.Box(new Rect(10, 10, 100, 20), content, style);
     }
     // Update is called once per frame
     void Update()
@@ -128,7 +140,7 @@ public class MovePlayer : MonoBehaviour
         }
         RaycastHit hit;
 
-        
+        content = new GUIContent($"pos: {transform.position}", debugTex, "This is a tooltip");
     }
     public void Cube()
     {
@@ -249,6 +261,8 @@ public class MovePlayer : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        
+        
         onTriggerEnter.raise(this, GetComponent<MovePlayer>(), isUpsideDown, 6, other.tag, 2);
         Debug.Log(other.tag);
         

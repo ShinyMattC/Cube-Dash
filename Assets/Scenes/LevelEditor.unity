@@ -7697,6 +7697,7 @@ MonoBehaviour:
   - {fileID: 1765568807518509010, guid: 8f760f0e8d6286d40be56986567a0490, type: 3}
   - {fileID: 377778788475027584, guid: 9d9b86f46705d9a48b6982544012a755, type: 3}
   - {fileID: 5169547066879019660, guid: c9496a043c8444f499b17b1b4090c816, type: 3}
+  - {fileID: 8801335771397549825, guid: 6d764253cefde694d9097cb4cf526158, type: 3}
   itemImage:
   - {fileID: 4137405628080002798, guid: 9d79ff4518c332d499dfa7a99d8ef45f, type: 3}
   - {fileID: 8143682531837826358, guid: 39e1b44525cea684aa58baac3a3d2815, type: 3}
@@ -7715,6 +7716,7 @@ MonoBehaviour:
   - {fileID: 1765568807518509010, guid: 7c6feda5f00dcb84493d7a7ad0785360, type: 3}
   - {fileID: 3825738955047186070, guid: b318e5d417e773f42990e64f44657294, type: 3}
   - {fileID: 5169547066879019660, guid: 026c47e2165d29d4ca76be2a307b8d79, type: 3}
+  - {fileID: 8801335771397549825, guid: 4b8a94316013d86459bf550060a89b21, type: 3}
   curButtonPressed: 0
   isInEditor: 1
 --- !u!4 &879203865
@@ -7801,6 +7803,7 @@ MonoBehaviour:
   - Slope30
   - Slope45
   - YPortal
+  - JPad
   prefabs:
   - {fileID: 4137405628080002798, guid: 504e8608e303c784b992ef108bd95109, type: 3}
   - {fileID: 8813685526598557041, guid: 04cfb2ad420b0dc4ca974976a19d6a91, type: 3}
@@ -7819,6 +7822,7 @@ MonoBehaviour:
   - {fileID: 5476129647615037337, guid: e47b7b82b0314c641aa40631e69b574e, type: 3}
   - {fileID: 1765568807518509010, guid: 8f760f0e8d6286d40be56986567a0490, type: 3}
   - {fileID: 2991734972424709570, guid: 203c83f9d7ed04c4bbb6a5b083b854bf, type: 3}
+  - {fileID: 8801335771397549825, guid: 6d764253cefde694d9097cb4cf526158, type: 3}
   player: {fileID: 0}
   inp_levelName: {fileID: 34517227}
   inp_songName: {fileID: 1025940899}
@@ -19042,7 +19046,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 895650655}
   m_HandleRect: {fileID: 895650654}
   m_Direction: 2
-  m_Value: 1.0000044
+  m_Value: 1.0000004
   m_Size: 0.25893635
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -19453,7 +19457,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0000743866, y: -0.0009857949}
+  m_AnchoredPosition: {x: -0.0000743866, y: -0.00007729575}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2084586954

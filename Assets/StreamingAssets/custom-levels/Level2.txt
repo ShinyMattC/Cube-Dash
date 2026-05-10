@@ -1,0 +1,30 @@
+name: Level2§
+author: ApocBird§
+songName: §
+songAuthor: §
+levelData: {
+Spike(11,2,10;0,0,0)
+SpawnPoint(0,2,10;0,0,0)
+JOrb(12,3,10;0,0,0)
+Spike(19,2,10;0,0,0)
+JOrb(20,3,10;0,0,0)
+Block(26,3,10;0,0,0)
+Spike(31,2,10;0,0,0)
+YPortal(32,4,10;0,0,0)
+Block(34,7,10;0,0,0)
+Block(35,7,10;0,0,0)
+Block(36,7,10;0,0,0)
+Block(37,7,10;0,0,0)
+Spike(38,6,10;0,0,180)
+BPortal(39,5,10;0,0,0)
+Spike(45,2,10;0,0,0)
+Spike(51,2,10;0,0,0)
+Spike(52,2,10;0,0,0)
+Spike(57,2,10;0,0,0)
+YPortal(58,4,10;0,0,0)
+Block(60,7,10;0,0,0)
+Spike(61,6,10;0,0,180)
+BPortal(63,4,10;0,0,0)
+Spike(71,2,10;0,0,0)
+LevelEnd(75,6,10;0,0,0)
+}

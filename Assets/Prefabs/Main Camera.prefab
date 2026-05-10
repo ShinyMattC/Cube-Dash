@@ -146,8 +146,8 @@ MonoBehaviour:
   player: {fileID: 0}
   offset: {x: 0, y: 5, z: -10}
   speed: 0
-  yAxisTriggerTop: {fileID: 0}
-  yAxisTriggerBottom: {fileID: 0}
+  yAxisTriggerTop: {fileID: 2535229111898307109}
+  yAxisTriggerBottom: {fileID: 2535229112006366893}
   follower: {fileID: 2535229110384747726}
   followerOriginalPosition: {x: 0, y: 0, z: 0}
   offsetOriginal: {x: 0, y: 0, z: 0}

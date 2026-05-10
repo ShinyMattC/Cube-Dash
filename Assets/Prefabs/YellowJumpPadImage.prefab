@@ -4762,15 +4762,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4806143389898575759}
-  - component: {fileID: 134298413671853404}
-  - component: {fileID: -120192685630292248}
-  - component: {fileID: 3734960836144846725}
-  - component: {fileID: 8658478362093928512}
-  - component: {fileID: 287674125372099008}
-  - component: {fileID: 6891242201837672798}
+  - component: {fileID: 2956216921910152038}
+  - component: {fileID: 7015809372426092960}
+  - component: {fileID: -4387434374423640103}
   m_Layer: 0
-  m_Name: YellowJumpPad
-  m_TagString: Yellow Jump Pad
+  m_Name: YellowJumpPadImage
+  m_TagString: ItemImage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4783,71 +4780,22 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8801335771397549825}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 7.2920732, z: -14.418801}
   m_LocalScale: {x: 0.7, y: 0.1, z: 0.7}
   m_Children:
   - {fileID: 4852274451717136633}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &134298413671853404
-MonoBehaviour:
+--- !u!33 &2956216921910152038
+MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8801335771397549825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ba69129a144a374a87cf315e414af1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-120192685630292248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8801335771397549825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 217a5c6617d3eee44af6c6364e99c432, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 99
-  curPosition: {x: 0, y: 0, z: 0}
-  curRotation: {x: 0, y: 0, z: 0}
-  editor: {fileID: 0}
-  _name: JPad
-  objectOriginalColor: {r: 0, g: 0, b: 0, a: 0}
---- !u!114 &3734960836144846725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8801335771397549825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f36f2b11a2e2cf24c910ad252c036045, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: fa4261c77a02b6943b996dbf6bd326f1, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 134298413671853404}
-        m_MethodName: GetPlayer
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!23 &8658478362093928512
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &7015809372426092960
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4865,7 +4813,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e4818036b3fe0564482ac4fb996a3a14, type: 2}
+  - {fileID: 2100000, guid: 1273f4e0da92eab40a3686cccc69cbb5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4886,24 +4834,15 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &287674125372099008
-MeshFilter:
+--- !u!114 &-4387434374423640103
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8801335771397549825}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &6891242201837672798
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8801335771397549825}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.99999994, y: 1, z: 0.99999994}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20a6726e8bfacd645a7baee1a34fe3a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

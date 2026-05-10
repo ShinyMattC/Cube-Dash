@@ -5,6 +5,8 @@ using UnityEngine;
 public class JumpPad : MonoBehaviour
 {
     GameObject player;
+    Rigidbody playerRb;
+    MovePlayer playerMove;
 
     private void Start()
     {
@@ -20,11 +22,8 @@ public class JumpPad : MonoBehaviour
         {
             playerRb.AddForce(Vector3.down * jumpForce, ForceMode.Impulse);
         }*/
-        if(Input.GetMouseButton(0))
-        {
-            player.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            player.GetComponent<Rigidbody>().AddForce((player.GetComponent<MovePlayer>().isUpsideDown ? Vector3.down : Vector3.up) * jumpForce, ForceMode.Impulse);
-        }
+        player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            player.GetComponent<Rigidbody>().AddForce((player.GetComponent<MovePlayer>().isUpsideDown ? Vector3.down : Vector3.up) * jumpForce , ForceMode.Impulse);
         
     }
     public void GetPlayer(Component sender, params object[] data)
@@ -32,7 +31,9 @@ public class JumpPad : MonoBehaviour
         if((string)data[3] == this.tag)
         {
             player = sender.gameObject;
-        JumpPadFunction((int)data[2]);
+        playerRb = sender.GetComponent<Rigidbody>();
+        playerMove = (MovePlayer)data[0];
+        JumpPadFunction((int)data[2] - 2);
         }
         
     }

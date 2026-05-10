@@ -27,12 +27,14 @@ public class BlockItem : MonoBehaviour
         curPosition = this.gameObject.transform.position;
         curRotation = this.gameObject.transform.rotation.eulerAngles;
     }
+
     void OnMouseOver() {
         editor = GameObject.FindGameObjectWithTag("Level Editor Manager").GetComponent<LevelEditorManager>();
-        if(editor != null)
+        if( editor!= null)
         {
             if (Input.GetMouseButtonDown(0))
             {
+                
                 Renderer renderer = this.gameObject.GetComponent<Renderer>();
                 
                 isSelected = (isSelected == true) ? false : true;
@@ -89,11 +91,16 @@ public class BlockItem : MonoBehaviour
             
             
         }
+        else {
+            return;
+        }
         
     }
     public void ButtonClick(Component sender, params object[] data)
     {
-        TransformButton t = (TransformButton)sender;
+        if(isSelected)
+        {
+          TransformButton t = (TransformButton)sender;
         switch((editorbuttontype)data[0])
         {
             case editorbuttontype.MoveLeft:
@@ -129,7 +136,9 @@ public class BlockItem : MonoBehaviour
                 editor.itemButtons[id].quantity++;
                 editor.itemButtons[id].quantityText.text = editor.itemButtons[id].quantity.ToString();
             break;
+        }  
         }
+        
     }
 }
 
