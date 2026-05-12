@@ -22,8 +22,8 @@ public class JumpPad : MonoBehaviour
         {
             playerRb.AddForce(Vector3.down * jumpForce, ForceMode.Impulse);
         }*/
-        player.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            player.GetComponent<Rigidbody>().AddForce((player.GetComponent<MovePlayer>().isUpsideDown ? Vector3.down : Vector3.up) * jumpForce , ForceMode.Impulse);
+            playerRb.velocity = Vector3.zero;
+            playerRb.AddForce((playerMove.isUpsideDown ? Vector3.down : Vector3.up) * jumpForce , ForceMode.Impulse);
         
     }
     public void GetPlayer(Component sender, params object[] data)

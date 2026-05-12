@@ -1,0 +1,24 @@
+name: Level4§
+author: ApocBird§
+songName: §
+songAuthor: §
+levelData: {
+SpawnPoint(0,2,10;0,0,0)
+Block(10,2,10;0,0,0)
+Block(11,2,10;0,0,0)
+Block(12,2,10;0,0,0)
+Block(13,2,10;0,0,0)
+SpeedFast(11,4,10;0,0,0)
+Block(18,3,10;0,0,0)
+Block(22,4,10;0,0,0)
+JOrb(27,5,10;0,0,0)
+JPad(38,2,10;0,0,0)
+Spike(39,2,10;0,0,0)
+Spike(44,2,10;0,0,0)
+SpeedSlow(44,4,10;0,0,0)
+Spike(49,2,10;0,0,0)
+SpeedNormal(57,3,10;0,0,0)
+LevelEnd(71,7,10;0,0,0)
+YPortal(51,4,10;0,0,0)
+BPortal(52,6,10;0,0,0)
+}

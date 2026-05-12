@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -133,7 +134,7 @@ public class MovePlayer : MonoBehaviour
 
         }
         Invoke(gameMode.ToString(), 0);
-
+        
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene(0);
@@ -141,7 +142,16 @@ public class MovePlayer : MonoBehaviour
         RaycastHit hit;
 
         content = new GUIContent($"pos: {transform.position}", debugTex, "This is a tooltip");
+
+        
     }
+
+    void DebugPath()
+    {
+        
+
+    }
+
     public void Cube()
     {
         
@@ -251,20 +261,26 @@ public class MovePlayer : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Collider[] colliders = Physics.OverlapSphere(groundCheck.position, groundCheckRadius, groundLayer);
-        if(collision.transform.tag != "Yellow Jump Orb")
-        {
-            isGrounded = true;
-        }
+        isGrounded = true;
         
         
     }
     
     private void OnTriggerEnter(Collider other)
     {
+        if(other.gameObject.layer != 8)
+        {
+            isCollidingWithTrigger = true;
+            if(isCollidingWithTrigger)
+            {
+                onTriggerEnter.raise(this, GetComponent<MovePlayer>(), isUpsideDown, 6, other.tag, 2);
+                isCollidingWithTrigger = false;
+            }
+        }
         
         
-        onTriggerEnter.raise(this, GetComponent<MovePlayer>(), isUpsideDown, 6, other.tag, 2);
         Debug.Log(other.tag);
+        
         
         
     

@@ -43,7 +43,6 @@ public class AudioManager : MonoBehaviour
        using(UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip("file://" + path + $"{name}.mp3", AudioType.MPEG))
         {
             yield return www.SendWebRequest();
-
             songToPlay = DownloadHandlerAudioClip.GetContent(www);
             audioSource.clip = songToPlay;
             audioSource.Play();

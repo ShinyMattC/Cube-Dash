@@ -814,6 +814,8 @@ GameObject:
   - component: {fileID: 89621426}
   - component: {fileID: 89621425}
   - component: {fileID: 89621424}
+  - component: {fileID: 89621429}
+  - component: {fileID: 89621428}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -896,9 +898,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 89621424}
-        m_MethodName: ButtonSceneLoad
-        m_Mode: 3
+      - m_Target: {fileID: 89621429}
+        m_MethodName: simulatebuttonpress
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -944,6 +946,88 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89621422}
   m_CullTransparentMesh: 0
+--- !u!114 &89621428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89621422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0836c3168f1a6ed48b536b1adf01bedc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelName: Level4
+  levelAuthor: ApocBird
+  songName: 
+  songAuthor: 
+  blockItems: []
+  inp_levelName: {fileID: 0}
+  inp_levelAuthor: {fileID: 0}
+  inp_songName: {fileID: 0}
+  inp_songAuthor: {fileID: 0}
+  blockIDs: 
+  blockPositions: []
+  blockRotations: []
+  blockNames: []
+--- !u!114 &89621429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89621422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c97b4f7fca718214a8f66f7a8c4843ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelSave: {fileID: 89621428}
+  parsedDetails: []
+  defaultBlockNames:
+  - Block
+  - Spike
+  - JOrb
+  - BPortal
+  - BGPortal
+  - SGPortal
+  - CGPortal
+  - SpawnPoint
+  - SpeedNormal
+  - SpeedFast
+  - SpeedVFast
+  - SpeedSlow
+  - SpeedVSlow
+  - LevelEnd
+  - Slope30
+  - Slope45
+  - YPortal
+  - JPad
+  prefabs:
+  - {fileID: 4137405628080002798, guid: 504e8608e303c784b992ef108bd95109, type: 3}
+  - {fileID: 8813685526598557041, guid: 04cfb2ad420b0dc4ca974976a19d6a91, type: 3}
+  - {fileID: 3825738955047186070, guid: a27a22f49765e60448303caedea7c5ee, type: 3}
+  - {fileID: 5169547066879019660, guid: f7d03f2752a874c47bce7f7a071c7678, type: 3}
+  - {fileID: 5169547066879019660, guid: c9496a043c8444f499b17b1b4090c816, type: 3}
+  - {fileID: 5169547066879019660, guid: ef6474fd35b20da4fbb5f3ddc26a22ca, type: 3}
+  - {fileID: 5169547066879019660, guid: a843ab150bb5a314b95f89a4d07af167, type: 3}
+  - {fileID: 900081514062080910, guid: f7e8d8c619b52f44d879fe7d84c3269e, type: 3}
+  - {fileID: 2992126458239660262, guid: a4afe8008a1600b48ad27d829c3da98e, type: 3}
+  - {fileID: 2992126458239660262, guid: 719f189b51a8e5f44912748544dbcdc3, type: 3}
+  - {fileID: 2992126458239660262, guid: aac5b7d25cef9a84fbcada36b4e0a860, type: 3}
+  - {fileID: 2992126458239660262, guid: e4ca2ffe6b86a864281d7aab61af5938, type: 3}
+  - {fileID: 2992126458239660262, guid: af9c6967c233b234abfe70ca228dbd86, type: 3}
+  - {fileID: 377778788475027584, guid: 9d9b86f46705d9a48b6982544012a755, type: 3}
+  - {fileID: 5476129647615037337, guid: e47b7b82b0314c641aa40631e69b574e, type: 3}
+  - {fileID: 1765568807518509010, guid: 8f760f0e8d6286d40be56986567a0490, type: 3}
+  - {fileID: 2991734972424709570, guid: 203c83f9d7ed04c4bbb6a5b083b854bf, type: 3}
+  - {fileID: 2140442281355481597, guid: 571be4b5b71c71445b8083eefb664a9c, type: 3}
+  player: {fileID: 0}
+  inp_levelName: {fileID: 0}
+  inp_songName: {fileID: 0}
+  levelName: 
+  songName: 
 --- !u!1 &124500831
 GameObject:
   m_ObjectHideFlags: 0
@@ -1652,9 +1736,9 @@ RectTransform:
   m_Father: {fileID: 1447658693}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -217.2, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 110.8, y: 0}
   m_SizeDelta: {x: 220.94019, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &191618328
@@ -1685,8 +1769,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2223,6 +2307,8 @@ GameObject:
   - component: {fileID: 279619967}
   - component: {fileID: 279619966}
   - component: {fileID: 279619965}
+  - component: {fileID: 279619970}
+  - component: {fileID: 279619969}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -2305,9 +2391,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 279619965}
-        m_MethodName: ButtonSceneLoad
-        m_Mode: 3
+      - m_Target: {fileID: 279619970}
+        m_MethodName: simulatebuttonpress
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2353,6 +2439,86 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 279619963}
   m_CullTransparentMesh: 0
+--- !u!114 &279619969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279619963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0836c3168f1a6ed48b536b1adf01bedc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelName: Level3
+  levelAuthor: ApocBird
+  songName: 
+  songAuthor: 
+  blockItems: []
+  inp_levelName: {fileID: 0}
+  inp_levelAuthor: {fileID: 0}
+  inp_songName: {fileID: 0}
+  inp_songAuthor: {fileID: 0}
+  blockIDs: 
+  blockPositions: []
+  blockRotations: []
+  blockNames: []
+--- !u!114 &279619970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279619963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c97b4f7fca718214a8f66f7a8c4843ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelSave: {fileID: 279619969}
+  parsedDetails: []
+  defaultBlockNames:
+  - Block
+  - Spike
+  - JOrb
+  - BPortal
+  - BGPortal
+  - SGPortal
+  - CGPortal
+  - SpawnPoint
+  - SpeedNormal
+  - SpeedFast
+  - SpeedVFast
+  - SpeedSlow
+  - SpeedVSlow
+  - LevelEnd
+  - Slope30
+  - Slope45
+  - YPortal
+  prefabs:
+  - {fileID: 4137405628080002798, guid: 504e8608e303c784b992ef108bd95109, type: 3}
+  - {fileID: 8813685526598557041, guid: 04cfb2ad420b0dc4ca974976a19d6a91, type: 3}
+  - {fileID: 3825738955047186070, guid: a27a22f49765e60448303caedea7c5ee, type: 3}
+  - {fileID: 5169547066879019660, guid: f7d03f2752a874c47bce7f7a071c7678, type: 3}
+  - {fileID: 5169547066879019660, guid: c9496a043c8444f499b17b1b4090c816, type: 3}
+  - {fileID: 5169547066879019660, guid: ef6474fd35b20da4fbb5f3ddc26a22ca, type: 3}
+  - {fileID: 5169547066879019660, guid: a843ab150bb5a314b95f89a4d07af167, type: 3}
+  - {fileID: 900081514062080910, guid: f7e8d8c619b52f44d879fe7d84c3269e, type: 3}
+  - {fileID: 2992126458239660262, guid: a4afe8008a1600b48ad27d829c3da98e, type: 3}
+  - {fileID: 2992126458239660262, guid: 719f189b51a8e5f44912748544dbcdc3, type: 3}
+  - {fileID: 2992126458239660262, guid: aac5b7d25cef9a84fbcada36b4e0a860, type: 3}
+  - {fileID: 2992126458239660262, guid: e4ca2ffe6b86a864281d7aab61af5938, type: 3}
+  - {fileID: 2992126458239660262, guid: af9c6967c233b234abfe70ca228dbd86, type: 3}
+  - {fileID: 377778788475027584, guid: 9d9b86f46705d9a48b6982544012a755, type: 3}
+  - {fileID: 5476129647615037337, guid: e47b7b82b0314c641aa40631e69b574e, type: 3}
+  - {fileID: 1765568807518509010, guid: 8f760f0e8d6286d40be56986567a0490, type: 3}
+  - {fileID: 2991734972424709570, guid: 203c83f9d7ed04c4bbb6a5b083b854bf, type: 3}
+  player: {fileID: 0}
+  inp_levelName: {fileID: 0}
+  inp_songName: {fileID: 0}
+  levelName: 
+  songName: 
 --- !u!1 &284055515
 GameObject:
   m_ObjectHideFlags: 0
@@ -3101,10 +3267,10 @@ RectTransform:
   m_Father: {fileID: 888172313}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000076294, y: -19.54}
-  m_SizeDelta: {x: 620.01294, y: 160.39206}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -19.54}
+  m_SizeDelta: {x: -35.98706, y: -123.60794}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &420269696
 MonoBehaviour:
@@ -3125,31 +3291,27 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Update 1.3:
+  m_text: 'Update 1.5 Beta 2:
 
 
-    A new update! I came back to this game, because I have
-    realised that I just needed to be on the level editor
 
-    for a while, then
-    I figured it out. The level editor is now in a "working state".
+    -Recreated more levels in level editor
 
+    -Added
+    jump pad and made it usable
 
-    Updated:
+    -Untied player rotation from framerate
 
-    -Re-enabled
-    the level editor
-
-    -You can now load said levels. The path where the custom
-    levels are located is:
+    -Added
+    dedicated transform buttons in the editor, could allow for more objects to be
+    moved at the same time
 
 
-    C:\\Users\\<your username>\\Appdata\\LocalLow\\ApocBirbs\\
+    Known bugs:
 
-    3d
-    geometry dash\\custom-levels
-
-    -Fixed some placeholder art in the level editor'
+    -Sometimes, levels won''t save
+    in their respective level txt files. Just copy the level data from (blank).txt
+    to the level you made.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3158,8 +3320,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3176,15 +3338,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11.65
+  m_fontSize: 19.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 10
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_HorizontalAlignment: 8
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -4592,9 +4754,9 @@ RectTransform:
   m_Father: {fileID: 1447658693}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 289, y: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -39, y: 0}
   m_SizeDelta: {x: 48.855225, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &726722276
@@ -5782,8 +5944,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.837, y: 15.385}
-  m_SizeDelta: {x: 655.34155, y: 284.22955}
+  m_AnchoredPosition: {x: 0.00021362, y: 6.5196}
+  m_SizeDelta: {x: 912.13086, y: 395.60223}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &888172314
 MonoBehaviour:
@@ -5798,7 +5960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.87058824}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -9113,7 +9275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -10370,9 +10532,9 @@ RectTransform:
   m_Father: {fileID: 888172313}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000012761, y: -119.3}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -0.000012761, y: 22.699997}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1659208385
@@ -11573,6 +11735,7 @@ MonoBehaviour:
   - Slope30
   - Slope45
   - YPortal
+  - JPad
   prefabs:
   - {fileID: 4137405628080002798, guid: 504e8608e303c784b992ef108bd95109, type: 3}
   - {fileID: 8813685526598557041, guid: 04cfb2ad420b0dc4ca974976a19d6a91, type: 3}
@@ -11583,14 +11746,15 @@ MonoBehaviour:
   - {fileID: 5169547066879019660, guid: a843ab150bb5a314b95f89a4d07af167, type: 3}
   - {fileID: 900081514062080910, guid: f7e8d8c619b52f44d879fe7d84c3269e, type: 3}
   - {fileID: 2992126458239660262, guid: a4afe8008a1600b48ad27d829c3da98e, type: 3}
-  - {fileID: 3599706086491438160, guid: 9e0d87c2e249a494b84269814a20f40e, type: 3}
-  - {fileID: 657153990091438605, guid: abfc3abbeb929b54bae0d862a85f32d1, type: 3}
-  - {fileID: 3221657898057729398, guid: af218155aa82fe14981d2a4357d17533, type: 3}
-  - {fileID: 6980021169936284785, guid: 810dc488800192d4c883d49cc20021f1, type: 3}
+  - {fileID: 2992126458239660262, guid: 719f189b51a8e5f44912748544dbcdc3, type: 3}
+  - {fileID: 2992126458239660262, guid: aac5b7d25cef9a84fbcada36b4e0a860, type: 3}
+  - {fileID: 2992126458239660262, guid: e4ca2ffe6b86a864281d7aab61af5938, type: 3}
+  - {fileID: 2992126458239660262, guid: af9c6967c233b234abfe70ca228dbd86, type: 3}
   - {fileID: 377778788475027584, guid: 9d9b86f46705d9a48b6982544012a755, type: 3}
   - {fileID: 5476129647615037337, guid: e47b7b82b0314c641aa40631e69b574e, type: 3}
   - {fileID: 1765568807518509010, guid: 8f760f0e8d6286d40be56986567a0490, type: 3}
   - {fileID: 2991734972424709570, guid: 203c83f9d7ed04c4bbb6a5b083b854bf, type: 3}
+  - {fileID: 2140442281355481597, guid: 571be4b5b71c71445b8083eefb664a9c, type: 3}
   player: {fileID: 6371904882751867230, guid: 770585323d0104d4bb679e0eb83b7e44, type: 3}
   inp_levelName: {fileID: 1218347551}
   inp_songName: {fileID: 1325832252}

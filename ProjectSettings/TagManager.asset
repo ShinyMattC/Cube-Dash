@@ -36,8 +36,8 @@ TagManager:
   - Ground
   - Obstacle
   - Collider
-  - 
-  - 
+  - Checks
+  - Player
   - 
   - 
   - 

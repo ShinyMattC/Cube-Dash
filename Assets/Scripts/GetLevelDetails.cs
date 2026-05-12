@@ -165,7 +165,7 @@ public class GetLevelDetails : MonoBehaviour
             LoadLevelManager.Instance.songName = songName; 
         } 
         DontDestroyOnLoad(transform.root.gameObject);
-        SceneManager.LoadScene(9);
+        SceneManager.LoadSceneAsync(9);
 
     }
     public void LoadLevel(string levelName)
@@ -175,7 +175,7 @@ public class GetLevelDetails : MonoBehaviour
 
         DontDestroyOnLoad(transform.root.gameObject);
         
-        SceneManager.LoadScene(9);
+        SceneManager.LoadSceneAsync(9);
 
     }
     public void simulatebuttonpress()

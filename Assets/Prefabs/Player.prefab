@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 8349834740595113929}
   - component: {fileID: 1958232521}
   - component: {fileID: 1958232520}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Blockcheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 6371904882751867228}
   - component: {fileID: 6371904882751867229}
   - component: {fileID: 6914333333684052343}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -429,7 +429,7 @@ PrefabInstance:
     - target: {fileID: 681270375408173403, guid: 0b0bff336b21ba94abeb6617f9228dc3,
         type: 3}
       propertyPath: m_text
-      value: build 20260417_15_b1
+      value: build 20260510_15_b2
       objectReference: {fileID: 0}
     - target: {fileID: 2926555240057991013, guid: 0b0bff336b21ba94abeb6617f9228dc3,
         type: 3}
@@ -439,7 +439,7 @@ PrefabInstance:
     - target: {fileID: 5675746476378811344, guid: 0b0bff336b21ba94abeb6617f9228dc3,
         type: 3}
       propertyPath: m_text
-      value: 'v1.5 beta1
+      value: 'v1.5 beta2
 
 '
       objectReference: {fileID: 0}
