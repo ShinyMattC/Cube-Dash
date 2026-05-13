@@ -78,6 +78,40 @@ public class GetLevelDetails : MonoBehaviour
                 //Debug.Log($"{temp[0]} {temp[1]}");
                 metadata.Add(temp[0], temp[1]);
                 Debug.Log(metadata.Count);
+                foreach(KeyValuePair<string, string> kvp in metadata)
+                {
+                    if(levelSave.inp_levelName != null)
+                    {
+                        switch(kvp.Key)
+                        {
+                            case "name":
+                                levelSave.inp_levelName.text = kvp.Value;
+                                break;
+                            case "author":
+                                levelSave.inp_levelAuthor.text = kvp.Value;
+                                break;
+                            case "songName":
+                                levelSave.inp_songName.text = kvp.Value;
+                                break;
+                            case "songAuthor":
+                                levelSave.inp_songAuthor.text = kvp.Value;
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        switch(kvp.Key)
+                        {
+                            case "name":
+                                levelName = kvp.Value;
+                                break;
+                            case "songName":
+                                songName = kvp.Value;
+                                break;
+                                
+                    }
+                    }
+                }
             }
             
 

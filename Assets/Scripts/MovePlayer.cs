@@ -135,6 +135,7 @@ public class MovePlayer : MonoBehaviour
         }
         Invoke(gameMode.ToString(), 0);
         
+        
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene(0);

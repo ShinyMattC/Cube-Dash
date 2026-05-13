@@ -9,6 +9,7 @@ public class StartEditor : MonoBehaviour
     [SerializeField] int amountOfPlayers = 0;
 
     public EventSO onEditorGameStart;
+    GameObject p;
     
     // Start is called before the first frame update
     void Start()
@@ -32,13 +33,14 @@ public class StartEditor : MonoBehaviour
                 {
                     try
                     {
-                        GameObject p = Instantiate(player, GameObject.FindGameObjectWithTag("Spawn Point").transform.position, Quaternion.identity); // make player
+                        p = Instantiate(player, GameObject.FindGameObjectWithTag("Spawn Point").transform.position, Quaternion.identity); // make player
                         amountOfPlayers++;
                         TextMeshProUGUI errText = GameObject.Find("Error text").GetComponent<TextMeshProUGUI>();
                         errText.text = "";
                         GetLevelDetails gld = GameObject.FindGameObjectWithTag("Level Editor Manager").GetComponent<GetLevelDetails>();
                         gld.GetMetadata(Application.streamingAssetsPath + "/custom-levels/", $"{gld.gameObject.GetComponent<LevelSave>().levelName}.txt");
                         onEditorGameStart.raise(this, p.GetComponent<AudioSource>(), GameObject.FindGameObjectWithTag("Level Editor Manager").GetComponent<GetLevelDetails>());
+                        p.GetComponent<AudioSource>().Pause();
                     }
                     catch
                     {
@@ -56,6 +58,7 @@ public class StartEditor : MonoBehaviour
             case 1:
                 Debug.Log("The world!");
                 Time.timeScale = (Time.timeScale == 1f) ? 0f : 1f;
+                p.GetComponent<AudioSource>().Pause();
                 break;
         }
     }

@@ -23,7 +23,7 @@ public class JumpPad : MonoBehaviour
             playerRb.AddForce(Vector3.down * jumpForce, ForceMode.Impulse);
         }*/
             playerRb.velocity = Vector3.zero;
-            playerRb.AddForce((playerMove.isUpsideDown ? Vector3.down : Vector3.up) * jumpForce , ForceMode.Impulse);
+            playerRb.velocity = new Vector3(0, (playerMove.isUpsideDown ? -1 : 1) * jumpForce * 2, 0);
         
     }
     public void GetPlayer(Component sender, params object[] data)
