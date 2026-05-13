@@ -213,7 +213,7 @@ public class MovePlayer : MonoBehaviour
     public void Ship()
     {
         // gravity changing values (-1,5 * gravity) are subject to change
-        cubeModel.transform.rotation = Quaternion.Euler(rb.velocity.y * -2, 0, 0);
+        cubeModel.transform.rotation = Quaternion.Euler(0, 0, rb.velocity.y * 2);
         if(!isUpsideDown)
         {
             Physics.gravity = new Vector3(0, -9.81f, 0);
