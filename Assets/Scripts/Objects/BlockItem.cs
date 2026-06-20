@@ -37,10 +37,15 @@ public class BlockItem : MonoBehaviour
         curPosition = this.gameObject.transform.position;
         curRotation = this.gameObject.transform.rotation.eulerAngles;
     }
+    private void Awake()
+    {
+        editor = GameObject.Find("LevelEditorManager").GetComponent<LevelEditorManager>();
 
+        
+    }
     void OnMouseOver() {
         
-        editor = (SceneManager.GetActiveScene().ToString() == "LevelEditor") ? GameObject.Find("LevelEditorManager").GetComponent<LevelEditorManager>() : null;
+        
         if( editor!= null)
         {
             if (Input.GetMouseButtonDown(0))
@@ -154,10 +159,25 @@ public class BlockItem : MonoBehaviour
     }
     public void TriggerChange(Component sender, params object[] data) 
     {
-        if((int)data[0] == groupID)
+        if((bool)data[1] && (int)data[3] == this.groupID)
         {
-            Debug.Log("Trigger triggered");
+            switch((Triggertype)data[0])
+            {
+                case Triggertype.Move:
+                transform.position = (Vector3)data[4];
+                break;
+            }
         }
+        else if((bool)data[2] && (int)data[3] == this.instanceID)
+        {
+            switch((Triggertype)data[0])
+            {
+                case Triggertype.Move:
+                transform.position = (Vector3)data[4];
+                break;
+            }
+        }
+
     }
 }
 
