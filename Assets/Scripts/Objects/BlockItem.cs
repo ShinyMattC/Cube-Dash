@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using System;
 
+[Serializable]
 public class BlockItem : MonoBehaviour
 {
     public int id;
@@ -12,15 +13,24 @@ public class BlockItem : MonoBehaviour
     public Vector3 curRotation;
     public LevelEditorManager editor;
     public string _name;
+    public int groupID;
+    public int instanceID;
 
     private bool isSelected = false;
 
     public Color objectOriginalColor;
 
+    public EventSO onEditorObjectSelected;
+
+    [SerializeField] EventSO onModifierTriggerEntered;
+
     // Start is called before the first frame update
     void Start()
     {
+        instanceID = UnityEngine.Random.Range(1000000, 9999999);
         objectOriginalColor = this.gameObject.GetComponent<Renderer>().material.color;
+        
+        
     }
     private void Update()
     {
@@ -29,7 +39,8 @@ public class BlockItem : MonoBehaviour
     }
 
     void OnMouseOver() {
-        editor = GameObject.FindGameObjectWithTag("Level Editor Manager").GetComponent<LevelEditorManager>();
+        
+        editor = (SceneManager.GetActiveScene().ToString() == "LevelEditor") ? GameObject.Find("LevelEditorManager").GetComponent<LevelEditorManager>() : null;
         if( editor!= null)
         {
             if (Input.GetMouseButtonDown(0))
@@ -38,6 +49,7 @@ public class BlockItem : MonoBehaviour
                 Renderer renderer = this.gameObject.GetComponent<Renderer>();
                 
                 isSelected = (isSelected == true) ? false : true;
+                onEditorObjectSelected.raise(this, isSelected);
                 renderer.material.SetColor("_Color", (isSelected == true) ? Color.green : objectOriginalColor);
                 
                 
@@ -139,6 +151,13 @@ public class BlockItem : MonoBehaviour
         }  
         }
         
+    }
+    public void TriggerChange(Component sender, params object[] data) 
+    {
+        if((int)data[0] == groupID)
+        {
+            Debug.Log("Trigger triggered");
+        }
     }
 }
 

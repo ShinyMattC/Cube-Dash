@@ -1,19 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trigger : MonoBehaviour
+[Serializable]
+public class Trigger : Block
 {
+    public int targetGroupID;
+    public int targetInstanceID;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public EventSO onModifierTriggerEntered;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public bool useGroup, useInstance;
 }

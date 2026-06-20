@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8981864243570550153}
   - component: {fileID: 7575373477754752987}
   - component: {fileID: 563099860888639697}
+  - component: {fileID: -4363528352110175119}
   m_Layer: 0
   m_Name: JumpPadNew
   m_TagString: Yellow Jump Pad
@@ -318,7 +319,11 @@ MonoBehaviour:
   curRotation: {x: 0, y: 0, z: 0}
   editor: {fileID: 0}
   _name: JPad
+  groupID: 0
   objectOriginalColor: {r: 0, g: 0, b: 0, a: 0}
+  onEditorObjectSelected: {fileID: 11400000, guid: e2a1f6d54cb684d4d8edf2a9c3d9e489,
+    type: 2}
+  onModifierTriggerEntered: {fileID: 0}
 --- !u!114 &9198232662704355688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,3 +403,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 0.100000024, z: 0.7}
   m_Center: {x: 0, y: -0.45, z: 0}
+--- !u!114 &-4363528352110175119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140442281355481597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36f2b11a2e2cf24c910ad252c036045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 0}
+  response:
+    m_PersistentCalls:
+      m_Calls: []

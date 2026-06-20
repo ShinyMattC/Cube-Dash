@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 8193963401237680758}
   - component: {fileID: 2954355651428741383}
   - component: {fileID: 3363138540152679652}
+  - component: {fileID: -5775099904455099298}
   m_Layer: 0
   m_Name: new new new spike
   m_TagString: Obstacle
@@ -149,7 +150,11 @@ MonoBehaviour:
   curRotation: {x: 0, y: 0, z: 0}
   editor: {fileID: 0}
   _name: Spike
+  groupID: 0
   objectOriginalColor: {r: 0, g: 0, b: 0, a: 0}
+  onEditorObjectSelected: {fileID: 11400000, guid: e2a1f6d54cb684d4d8edf2a9c3d9e489,
+    type: 2}
+  onModifierTriggerEntered: {fileID: 0}
 --- !u!65 &1008693285441008610
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -264,3 +269,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-5775099904455099298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8813685526598557041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36f2b11a2e2cf24c910ad252c036045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 0}
+  response:
+    m_PersistentCalls:
+      m_Calls: []

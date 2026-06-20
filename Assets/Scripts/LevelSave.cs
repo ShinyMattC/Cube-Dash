@@ -5,6 +5,7 @@ using TMPro;
 using System;
 using System.IO;
 using UnityEditor;
+using System.Linq;
 
 public class LevelSave : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class LevelSave : MonoBehaviour
     public List<Vector3> blockPositions;
     public List<Vector3> blockRotations;
     public List<string> blockNames;
+    public List<int> blockGroups;
+    public List<int> blockInstanceIDs;
 
     private LevelEditorManager lm;
     // Start is called before the first frame update
@@ -77,11 +80,13 @@ public class LevelSave : MonoBehaviour
             WriteToTxt("levelData: {");
             foreach (BlockItem b in blockArray)
             {
-                WriteToTxt($"{b._name}({(int)b.curPosition.x},{(int)b.curPosition.y},{(int)b.curPosition.z};{(int)b.curRotation.x},{(int)b.curRotation.y},{(int)b.curRotation.z})");
+                WriteToTxt($"{b._name}({(int)b.curPosition.x},{(int)b.curPosition.y},{(int)b.curPosition.z};{(int)b.curRotation.x},{(int)b.curRotation.y},{(int)b.curRotation.z};{b.groupID};{b.instanceID})");
                 blockIDs.Add(b.id);
                 blockPositions.Add(b.curPosition);
                 blockRotations.Add(b.curRotation);
                 blockNames.Add(b._name);
+                blockGroups.Add(b.groupID);
+                blockInstanceIDs.Add(b.instanceID);
 
                 Debug.Log($"{blockIDs.Count}");
                 Debug.Log($"{blockPositions.Count}");
@@ -93,9 +98,10 @@ public class LevelSave : MonoBehaviour
         else
         {
             blockIDs.Clear();
-            blockPositions.Clear();
             blockNames.Clear();
             blockRotations.Clear();
+            blockGroups.Clear();
+            blockInstanceIDs.Clear();
             ClearContentsOfSaveFile(levelPth + levelName + ".txt"); //To remove writing all over existing file
 
             WriteToTxt("name: " + levelName + "§");
@@ -105,11 +111,13 @@ public class LevelSave : MonoBehaviour
             WriteToTxt("levelData: {");
             foreach (BlockItem b in blockArray)
             {
-                WriteToTxt($"{b._name}({(int)b.curPosition.x},{(int)b.curPosition.y},{(int)b.curPosition.z};{(int)b.curRotation.x},{(int)b.curRotation.y},{(int)b.curRotation.z})");
+                WriteToTxt($"{b._name}({(int)b.curPosition.x},{(int)b.curPosition.y},{(int)b.curPosition.z};{(int)b.curRotation.x},{(int)b.curRotation.y},{(int)b.curRotation.z};{b.groupID};{b.instanceID})");
                 blockIDs.Add(b.id);
                 blockPositions.Add(b.curPosition);
                 blockRotations.Add(b.curRotation);
                 blockNames.Add(b._name);
+                blockGroups.Add(b.groupID);
+                blockInstanceIDs.Add(b.instanceID);
 
                 Debug.Log($"{blockIDs.Count}");
                 Debug.Log($"{blockPositions.Count}");
@@ -147,6 +155,9 @@ public class LevelSave : MonoBehaviour
         blockPositions.Add(block.curPosition);
         blockRotations.Add(block.curRotation);
         blockNames.Add(block._name);
+        blockGroups.Add(block.groupID);
+        blockInstanceIDs.Add(block.instanceID);
+        
     }
     public void OnBlockRemoved(BlockItem block)
     {
@@ -154,7 +165,9 @@ public class LevelSave : MonoBehaviour
         blockIDs.Remove(block.id);
         blockPositions.Remove(block.curPosition);
         blockRotations.Remove(block.curRotation);
-        blockNames.Add(block._name);
+        blockNames.Remove(block._name);
+        blockGroups.Remove(block.groupID);
+        blockInstanceIDs.Remove(block.instanceID);
     }
     private BlockItem[] ConvertToArray(List<BlockItem> bloc)
     {

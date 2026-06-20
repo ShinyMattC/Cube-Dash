@@ -8,20 +8,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class Block
-{
-    public string blockName;
-    public int[] position = new int[3];
-    public int[] rotation = new int[3];
-    public void DisplayBlockDetails(Block b)
-    {
-        Debug.Log("name: " + b.blockName + " pos: ");
-        for(int j = 0; j < b.position.Length; j++)
-        {
-            Debug.Log($"{b.position[j]}");
-        }
-    }
-}
+
 public class GetLevelDetails : MonoBehaviour
 {
     public LevelSave levelSave;
@@ -170,6 +157,8 @@ public class GetLevelDetails : MonoBehaviour
                 int.TryParse(str[4], out b.rotation[0]);
                 int.TryParse(str[5], out b.rotation[1]);
                 int.TryParse(str[6], out b.rotation[2]);
+                int.TryParse(str[7], out b.groupID);
+                int.TryParse(str[8], out b.instanceID);
                 
                 GameObject blockGO;
 
@@ -179,6 +168,8 @@ public class GetLevelDetails : MonoBehaviour
                 blockGO.AddComponent<BlockItem>();
                 blockGO.GetComponent<BlockItem>().curPosition = new Vector3(b.position[0], b.position[1], b.position[2]);
                 blockGO.GetComponent<BlockItem>().curRotation = new Vector3(b.rotation[0], b.rotation[1], b.rotation[2]);
+                blockGO.GetComponent<BlockItem>().groupID = b.groupID;
+                blockGO.GetComponent<BlockItem>().instanceID = b.instanceID;
                 levelSave.OnBlockPlaced(blockGO.GetComponent<BlockItem>());
         }
         

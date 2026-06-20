@@ -1,10 +1,12 @@
 ﻿﻿using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
+using System.IO;
 using System.Threading;
+using UnityEditor;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Event")]
+[CreateAssetMenu(fileName = "basicevent", menuName = "Event")]
 public class EventSO : ScriptableObject
 {
     public List<EventListener> listeners = new List<EventListener>();

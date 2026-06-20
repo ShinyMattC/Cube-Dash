@@ -172,6 +172,7 @@ GameObject:
   - component: {fileID: 5935067233322879777}
   - component: {fileID: 8044808277356372789}
   - component: {fileID: 911678596258517406}
+  - component: {fileID: 6820812239787024888}
   m_Layer: 0
   m_Name: Yellow Portal
   m_TagString: Yellow Portal
@@ -237,7 +238,11 @@ MonoBehaviour:
   curRotation: {x: 0, y: 0, z: 0}
   editor: {fileID: 0}
   _name: YPortal
+  groupID: 0
   objectOriginalColor: {r: 0, g: 0, b: 0, a: 0}
+  onEditorObjectSelected: {fileID: 11400000, guid: e2a1f6d54cb684d4d8edf2a9c3d9e489,
+    type: 2}
+  onModifierTriggerEntered: {fileID: 0}
 --- !u!114 &8044808277356372789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,3 +297,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6820812239787024888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2991734972424709570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36f2b11a2e2cf24c910ad252c036045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 0}
+  response:
+    m_PersistentCalls:
+      m_Calls: []
