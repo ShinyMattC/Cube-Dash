@@ -239,6 +239,7 @@ MonoBehaviour:
   editor: {fileID: 0}
   _name: YPortal
   groupID: 0
+  instanceID: 0
   objectOriginalColor: {r: 0, g: 0, b: 0, a: 0}
   onEditorObjectSelected: {fileID: 11400000, guid: e2a1f6d54cb684d4d8edf2a9c3d9e489,
     type: 2}
@@ -309,7 +310,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36f2b11a2e2cf24c910ad252c036045, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 0}
+  gameEvent: {fileID: 11400000, guid: 7d0e80a74f91c6a41989fbbb16dd0ed6, type: 2}
   response:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5935067233322879777}
+        m_MethodName: TriggerChange
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

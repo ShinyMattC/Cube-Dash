@@ -24,6 +24,7 @@ TagManager:
   - Fast Speed Portal
   - Slow Speed Portal
   - Very Slow Speed Portal
+  - Move Trigger
   layers:
   - Default
   - TransparentFX
